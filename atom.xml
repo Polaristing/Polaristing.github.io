@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>思洁入夢</title>
   
-  <subtitle>分享前后端技术、情感文章、网站源码、音乐歌单、影视资源、活动资讯</subtitle>
+  <subtitle>思洁入夢</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://polaristing.github.io/"/>
