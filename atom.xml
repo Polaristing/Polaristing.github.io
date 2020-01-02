@@ -66,4 +66,35 @@
     
   </entry>
   
+  <entry>
+    <title>2016.11.13</title>
+    <link href="http://polaristing.github.io/2016/11/14/test-my-in/"/>
+    <id>http://polaristing.github.io/2016/11/14/test-my-in/</id>
+    <published>2016-11-14T09:31:00.000Z</published>
+    <updated>2020-01-02T06:07:09.480Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Story" scheme="http://polaristing.github.io/categories/Story/"/>
+    
+    
+      <category term="Story" scheme="http://polaristing.github.io/tags/Story/"/>
+    
+  </entry>
+  
 </feed>

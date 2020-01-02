@@ -28,6 +28,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>2016.11.13</title>
+      <link href="/2016/11/14/test-my-in/"/>
+      <url>/2016/11/14/test-my-in/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Story </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Story </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
