@@ -28,7 +28,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -465,11 +466,11 @@
                 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>枚举</strong>（<code>enum</code>全称为<code>enumeration</code>）类型是<code>Java 5</code>新增的类型，存放在<code>java.lang</code>包中，允许用常量来表示特定的数据片断，而且全部都以类型安全的形式来表示。</p>
 <h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><p> 创建枚举类型要使用<code>enum</code>关键字，隐含了所创建的类型都是<code>java.lang.Enum</code>类的子类（<code>java.lang.Enum</code>是一个抽象类）。枚举类型符合通用模式<code>Class Enum&lt;E extends Enum&lt;E&gt;&gt;</code>，而<code>E</code>表示枚举类型的名称。枚举类型的每一个值都将映射到<code>protected Enum(String name, int ordinal)</code>构造函数中。在这里每个值的名称都被转换成一个字符串，并且序数设置表示了此设置被创建的顺序。</p>
 <p>枚举类的定义格式如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">enum</span> 类名 <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">enum</span> 类名 <span class="token punctuation">{</span>
 
 <span class="token comment" spellcheck="true">//枚举值</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><ul>
 <li>需要的数据不能是任意的，而必须是一定范围内的值</li>
 <li>枚举类也是一个特殊的类，构造方法默认的修饰符是<code>private</code>的</li>
@@ -488,7 +489,7 @@
 <li><code>static &lt;T extends Enum&lt;T&gt;&gt; T valueOf(Class&lt;T&gt; enumType, String name)</code>：返回指定名称的枚举常量指定的enumtype的方法。如：<code>ColorEnum color = ColorEnum.valueOf("RED");</code>。</li>
 </ul>
 <h2 id="主要应用"><a href="#主要应用" class="headerlink" title="主要应用"></a>主要应用</h2><h3 id="表达常量"><a href="#表达常量" class="headerlink" title="表达常量"></a>表达常量</h3><p>在<code>Java 5</code>之前，定义常量的最佳方式是在<code>final</code>修饰的常量类中定义：<code>public static fianl...</code>修饰的属性，且须将构造方法设为<code>private</code>。代码示例如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">ColorConst</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">ColorConst</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> RED <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> GREEN <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
@@ -496,31 +497,31 @@
 
     <span class="token keyword">private</span> <span class="token function">ColorConst</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但，<strong>不建议在接口中定义常量</strong>。在<code>《Effective Java》</code>一书中提到过：</p>
 <blockquote>
 <p><strong>The constant interface pattern is a poor use of interfaces</strong>. That a class uses some constants internally is an implementation detail. Implementing a constant interface causes this implementation detail to leak into the class’s exported API. It is of no consequence to the users of a class that the class implements a constant interface. In fact, it may even confuse them. Worse, it represents a commitment: if in a future release the class is modified so that it no longer needs to use the constants, it still must implement the interface to ensure binary compatibility. If a nonfinal class implements a constant interface, all of its subclasses will have their namespaces polluted by the constants in the interface.There are several constant interfaces in the java platform libraries, such as java.io.ObjectStreamConstants. These interfaces should be regarded as anomalies and should not be emulated.</p>
 </blockquote>
 <p>大意是：<strong>如果某个实现了常量接口的类被修改不再需要常量了，也会因为序列化兼容原因不得不保持该实现，而且非<code>final</code>类实现常量接口会导致所有子类被污染</strong>。</p>
 <p>现在好了，有了枚举，可以把相关的常量分组到一个枚举类型里，而且枚举提供了比常量更多的方法。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> ColorEnum <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> ColorEnum <span class="token punctuation">{</span>
 
     RED<span class="token punctuation">,</span> GREEN<span class="token punctuation">,</span> BLUE
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：枚举类的名称一般以<code>Enum</code>结尾，比如<code>ColorEnum</code>等。如果你写个枚举类，取名为<code>Color</code>，那么没人能快速知道它是一个枚举类。</p>
 </blockquote>
 <h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>Java 中使用<code>values()</code>方法将枚举所有元素item转换成一个数组。这样就可以通过<code>foreach</code>语法来遍历枚举中的所有元素了。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>ColorEnum color<span class="token operator">:</span> ColorEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>ColorEnum color<span class="token operator">:</span> ColorEnum<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"ordinal:{}, name:{}"</span><span class="token punctuation">,</span> color<span class="token punctuation">.</span><span class="token function">ordinal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>输出结果；</p>
-<pre class=" language-bash"><code class="language-bash">ordinal:0, name:RED
+<pre class="line-numbers language-bash"><code class="language-bash">ordinal:0, name:RED
 ordinal:1, name:GREEN
-ordinal:2, name:BLUE</code></pre>
+ordinal:2, name:BLUE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><p>在<code>JDK7</code>之前，String字符串是不支持通过<code>switch</code>语法来筛选数据，但是 Java 为枚举提供了<code>switch</code>语法的支持。使用示例如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 客户端传来的枚举item</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 客户端传来的枚举item</span>
 ColorEnum color <span class="token operator">=</span> ColorEnum<span class="token punctuation">.</span>GREEN<span class="token punctuation">;</span>
 
 <span class="token keyword">switch</span> <span class="token punctuation">(</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -531,14 +532,14 @@ ColorEnum color <span class="token operator">=</span> ColorEnum<span class="toke
     <span class="token keyword">case</span> BLUE<span class="token operator">:</span> log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"进入了 BLUE 的分支"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
     <span class="token keyword">default</span><span class="token operator">:</span> log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"进入了 default 的分支"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>输出结果：</p>
-<pre class=" language-bash"><code class="language-bash">进入了 GREEN 的分支</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">进入了 GREEN 的分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：<code>switch</code>后已经指定了枚举的类型，<code>case</code>后无须再使用全名<code>ColorEnum</code>。</p>
 </blockquote>
 <h3 id="自定义属性和方法"><a href="#自定义属性和方法" class="headerlink" title="自定义属性和方法"></a>自定义属性和方法</h3><p>Java枚举中允许定义属性和方法，但必须在枚举实例序列的最后一个分号后再添加。Java 要求必须先定义枚举实例在前面，使用示例如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 关于颜色的枚举.
  * @author blinkfox on 2017/9/17.
  */</span>
@@ -595,12 +596,12 @@ ColorEnum color <span class="token operator">=</span> ColorEnum<span class="toke
         <span class="token keyword">return</span> name<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>注意</strong>：枚举的构造方法默认且只能是<code>private</code>的。</p>
 </blockquote>
 <h3 id="使用枚举来表达多态"><a href="#使用枚举来表达多态" class="headerlink" title="使用枚举来表达多态"></a>使用枚举来表达多态</h3><p>所有的枚举都继承自<code>java.lang.Enum</code>类。由于 Java 不支持多继承，所以枚举不能再继承其他类。但枚举类中可以定义抽象方法，也可以实现一个或者多个接口。由于每一个枚举值会呈现出不同的行为方式，则须要让每个枚举值分别实现方法。</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 关于颜色的枚举.
  * @author blinkfox on 2017/9/17.
  */</span>
@@ -683,19 +684,19 @@ ColorEnum color <span class="token operator">=</span> ColorEnum<span class="toke
         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="枚举集合的使用"><a href="#枚举集合的使用" class="headerlink" title="枚举集合的使用"></a>枚举集合的使用</h3><p>Java 中提供了两个方便操作<code>enum</code>的集合类：<code>java.util.EnumSet</code>和<code>java.util.EnumMap</code>。<code>EnumSet</code>保证集合中的元素不重复；<code>EnumMap</code>中的<code>key</code>是<code>enum</code>类型且不能为<code>null</code>，而<code>value</code>则可以是任意类型。<code>EnumSet</code>和<code>EnumMap</code>内部以数组来实现，性能更好。</p>
 <p>以下是<code>EnumMap</code>的使用示例：</p>
-<pre class=" language-java"><code class="language-java">EnumMap<span class="token operator">&lt;</span>ColorEnum<span class="token punctuation">,</span> String<span class="token operator">></span> colorEnumMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EnumMap</span><span class="token operator">&lt;</span>ColorEnum<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">EnumMap<span class="token operator">&lt;</span>ColorEnum<span class="token punctuation">,</span> String<span class="token operator">></span> colorEnumMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EnumMap</span><span class="token operator">&lt;</span>ColorEnum<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 colorEnumMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span>RED<span class="token punctuation">,</span> <span class="token string">"这是EnumMap中的'RED'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 colorEnumMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span>GREEN<span class="token punctuation">,</span> <span class="token string">"这是EnumMap中的'GREEN'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 colorEnumMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>ColorEnum<span class="token punctuation">.</span>BLUE<span class="token punctuation">,</span> <span class="token string">"这是EnumMap中的'BLUE'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> colorEnumMap<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> colorEnumMap<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>输出结果：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>1:红色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'RED'</span>, 2:绿色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'GREEN'</span>, 3:蓝色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'BLUE'</span><span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">{</span>1:红色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'RED'</span>, 2:绿色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'GREEN'</span>, 3:蓝色<span class="token operator">=</span>这是EnumMap中的<span class="token string">'BLUE'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="枚举单例"><a href="#枚举单例" class="headerlink" title="枚举单例"></a>枚举单例</h3><p>在<code>《Effective Java》</code>一书中强烈推荐<strong>使用枚举来实现单例模式</strong>，同时枚举单例代码也最为简单：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> ColorEnumSingleton <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> ColorEnumSingleton <span class="token punctuation">{</span>
 
     INSTANCE<span class="token punctuation">;</span>
 
@@ -703,7 +704,7 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
         <span class="token comment" spellcheck="true">// do something</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用枚举单例有以下好处：</p>
 <ul>
 <li>自由序列化</li>
@@ -971,10 +972,10 @@ log<span class="token punctuation">.</span><span class="token function">info</sp
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-10-27T23-20-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1102,6 +1103,43 @@ Collection接口继承了Iterable接口，依赖了Predicate、Spliterator、Str
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1361,6 +1399,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

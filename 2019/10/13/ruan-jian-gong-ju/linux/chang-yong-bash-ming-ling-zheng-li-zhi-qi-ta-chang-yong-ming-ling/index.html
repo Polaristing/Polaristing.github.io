@@ -33,7 +33,8 @@ hostname blinkfo">
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -469,28 +470,28 @@ hostname blinkfo">
             <div id="articleContent">
                 <h2 id="1-hostname-查看主机名"><a href="#1-hostname-查看主机名" class="headerlink" title="1. hostname - 查看主机名"></a>1. hostname - 查看主机名</h2><p><code>hostname</code>命令用于查看系统的主机名，或是修改系统的主机名。</p>
 <p><code>hostname</code>的常用命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示系统的当前主机名</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示系统的当前主机名</span>
 <span class="token function">hostname</span>
 
 <span class="token comment" spellcheck="true"># 修改你系统的主机名</span>
 <span class="token function">hostname</span> blinkfox-system
 
 <span class="token comment" spellcheck="true"># 使用 -F 选项，从指定的文件中读取主机名</span>
-<span class="token function">hostname</span> -F /root/hostname.txt</code></pre>
+<span class="token function">hostname</span> -F /root/hostname.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-uptime-查看系统运行时间"><a href="#2-uptime-查看系统运行时间" class="headerlink" title="2. uptime - 查看系统运行时间"></a>2. uptime - 查看系统运行时间</h2><p><code>uptime</code>命令用于打印系统的运行时间等信息。使用如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">uptime</span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uptime</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="3-w、who-列出登录的用户"><a href="#3-w、who-列出登录的用户" class="headerlink" title="3. w、who - 列出登录的用户"></a>3. w、who - 列出登录的用户</h2><p><code>w</code>命令用于显示登录用户及他们当前运行的进程。输入的内容格式如下：</p>
-<pre class=" language-bash"><code class="language-bash">w
+<pre class="line-numbers language-bash"><code class="language-bash">w
 
 <span class="token comment" spellcheck="true"># 打印如下</span>
 22:42  up 18 days, 1 hr, 2 users, load averages: 1.23 1.79 1.75
 USER     TTY      FROM              LOGIN@  IDLE WHAT
 blinkfox console  -                日19   6days -
-blinkfox s000     -                五23       - w</code></pre>
+blinkfox s000     -                五23       - w<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>who</code>命令有与<code>w</code>命令类似的用途，但它的功能比<code>w</code>命令更强大一些。语法格式如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">who</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE <span class="token operator">|</span> ARG1 ARG2<span class="token punctuation">]</span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">who</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE <span class="token operator">|</span> ARG1 ARG2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>who</code>常用命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示当前登录的所有用户信息</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 显示当前登录的所有用户信息</span>
 <span class="token function">who</span>
 
 <span class="token comment" spellcheck="true"># 显示系统的启动时间</span>
@@ -506,11 +507,11 @@ blinkfox s000     -                五23       - w</code></pre>
 <span class="token function">who</span> -r
 
 <span class="token comment" spellcheck="true"># 显示所有登录用户的用户名和登录用户数</span>
-<span class="token function">who</span> -q</code></pre>
+<span class="token function">who</span> -q<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="4-uname-查看系统信息"><a href="#4-uname-查看系统信息" class="headerlink" title="4. uname - 查看系统信息"></a>4. uname - 查看系统信息</h2><p><code>uname</code>命令用于打印内核名称和版本、主机名等系统信息。命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">uname</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>常用使用方式如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 只打印内核的名称</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 只打印内核的名称</span>
 <span class="token function">uname</span>
 
 <span class="token comment" spellcheck="true"># 使用 -n 选项，只打印系统的主机名</span>
@@ -529,12 +530,12 @@ blinkfox s000     -                五23       - w</code></pre>
 <span class="token function">uname</span> -i
 
 <span class="token comment" spellcheck="true"># 使用 -a 选项，打印上述所有示例中的信息</span>
-<span class="token function">uname</span> -a</code></pre>
+<span class="token function">uname</span> -a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-date-显示和设置系统日期和时间"><a href="#5-date-显示和设置系统日期和时间" class="headerlink" title="5. date - 显示和设置系统日期和时间"></a>5. date - 显示和设置系统日期和时间</h2><p><code>date</code>命令用于以多种格式显示日期和时间，或设置系统的日期和时间。<code>date</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">date</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>+FORMAT<span class="token punctuation">]</span>
-<span class="token function">date</span> <span class="token punctuation">[</span>-u<span class="token operator">|</span>--utc<span class="token operator">|</span>--universal<span class="token punctuation">]</span> <span class="token punctuation">[</span>MMDDhhmm<span class="token punctuation">[</span><span class="token punctuation">[</span>CC<span class="token punctuation">]</span>YY<span class="token punctuation">]</span><span class="token punctuation">[</span>.ss<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">date</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>+FORMAT<span class="token punctuation">]</span>
+<span class="token function">date</span> <span class="token punctuation">[</span>-u<span class="token operator">|</span>--utc<span class="token operator">|</span>--universal<span class="token punctuation">]</span> <span class="token punctuation">[</span>MMDDhhmm<span class="token punctuation">[</span><span class="token punctuation">[</span>CC<span class="token punctuation">]</span>YY<span class="token punctuation">]</span><span class="token punctuation">[</span>.ss<span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>常用使用命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 以默认格式显示系统的当前日期时间</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 以默认格式显示系统的当前日期时间</span>
 <span class="token function">date</span>
 
 <span class="token comment" spellcheck="true"># 格式化当前日期</span>
@@ -568,11 +569,11 @@ blinkfox s000     -                五23       - w</code></pre>
 <span class="token function">date</span> -s <span class="token string">"01:01:01 2012-05-23"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间 </span>
 <span class="token function">date</span> -s <span class="token string">"01:01:01 20120523"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span>
 <span class="token function">date</span> -s <span class="token string">"2012-05-23 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间 </span>
-<span class="token function">date</span> -s <span class="token string">"20120523 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span></code></pre>
+<span class="token function">date</span> -s <span class="token string">"20120523 01:01:01"</span> <span class="token comment" spellcheck="true"># 这样可以设置全部时间</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-id-显示用户属性"><a href="#6-id-显示用户属性" class="headerlink" title="6. id - 显示用户属性"></a>6. id - 显示用户属性</h2><p><code>id</code>命令用于打印输出用户<code>uid</code>、<code>gid</code>、用户名和组名等用户身份信息。<code>id</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">id</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">id</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>常见使用命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 输出当前用户的uid、用户名、gid、组名及用户属于的群组信息</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 输出当前用户的uid、用户名、gid、组名及用户属于的群组信息</span>
 <span class="token function">id</span>
 
 <span class="token comment" spellcheck="true"># 使用 -u 选项，输出用户的 uid</span>
@@ -591,7 +592,7 @@ blinkfox s000     -                五23       - w</code></pre>
 <span class="token function">id</span> -G root
 
 <span class="token comment" spellcheck="true"># -G 与 -n 选项结合使用，输出账号所属的所有群组的名称</span>
-<span class="token function">id</span> -Gn root</code></pre>
+<span class="token function">id</span> -Gn root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -840,10 +841,10 @@ blinkfox s000     -                五23       - w</code></pre>
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-10-13T18-15-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -974,6 +975,43 @@ sort example.txt
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1233,6 +1271,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

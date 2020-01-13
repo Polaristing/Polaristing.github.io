@@ -28,7 +28,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -637,9 +638,9 @@
 <p>(27). 结构甚于约定，坚守结构甚于约定的设计决策。</p>
 <p>(28). 封装条件，如果没有if或while语句的上下文，布尔逻辑就难以理解。应该把解释了条件意图的函数抽离出来。</p>
 <p>例如：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">shouldBeDeleted</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">shouldBeDeleted</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>要好于</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>timer<span class="token punctuation">.</span><span class="token function">hasExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>timer<span class="token punctuation">.</span><span class="token function">isRecurrent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>timer<span class="token punctuation">.</span><span class="token function">hasExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>timer<span class="token punctuation">.</span><span class="token function">isRecurrent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>(29). 避免否定性条件，尽可能将条件表示为肯定形式。</p>
 <p>(30). 函数只该做一件事</p>
 <p>(31). 掩蔽时序耦合，排列函数参数，好让它们被调用的次序显而易见。</p>
@@ -916,10 +917,10 @@
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-10-15T22-48-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1049,6 +1050,43 @@
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1308,6 +1346,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

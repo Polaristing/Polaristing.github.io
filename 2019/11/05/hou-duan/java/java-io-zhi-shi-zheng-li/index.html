@@ -29,7 +29,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -623,7 +624,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
 <li><code>abstract void flush()</code>: 刷新流。</li>
 <li><code>abstract void close()</code>: 关闭流，但要先刷新它。</li>
 </ul>
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="FileInputStream-和-FileOutputStream"><a href="#FileInputStream-和-FileOutputStream" class="headerlink" title="FileInputStream 和 FileOutputStream"></a>FileInputStream 和 FileOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="FileInputStream-和-FileOutputStream"><a href="#FileInputStream-和-FileOutputStream" class="headerlink" title="FileInputStream 和 FileOutputStream"></a>FileInputStream 和 FileOutputStream</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试复制文件a.txt中的内容到b.txt文件中.
  */</span>
 <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testCopyByFileStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -639,8 +640,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"文件读取写入失败!"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="BufferedInputStream-和-BufferedOutputStream"><a href="#BufferedInputStream-和-BufferedOutputStream" class="headerlink" title="BufferedInputStream 和 BufferedOutputStream"></a>BufferedInputStream 和 BufferedOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="BufferedInputStream-和-BufferedOutputStream"><a href="#BufferedInputStream-和-BufferedOutputStream" class="headerlink" title="BufferedInputStream 和 BufferedOutputStream"></a>BufferedInputStream 和 BufferedOutputStream</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试通过 BufferedInputStream 和 BufferedOutputStream 来复制文件a.txt中的内容到b.txt文件中.
  */</span>
 <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testCopyByBufferedStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -656,8 +657,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"通过缓冲区的方式来做文件读取写入失败!"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="ByteArrayOutputStream"><a href="#ByteArrayOutputStream" class="headerlink" title="ByteArrayOutputStream"></a>ByteArrayOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ByteArrayOutputStream"><a href="#ByteArrayOutputStream" class="headerlink" title="ByteArrayOutputStream"></a>ByteArrayOutputStream</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试将内容写入到ByteArrayOutputStream中并打印出来，不需要关闭流.
  */</span>
 <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testByByteArrayStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -673,8 +674,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">byte</span> b <span class="token operator">:</span> buf<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="PipedInputStream-和-PipedOutputStream"><a href="#PipedInputStream-和-PipedOutputStream" class="headerlink" title="PipedInputStream 和 PipedOutputStream"></a>PipedInputStream 和 PipedOutputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="PipedInputStream-和-PipedOutputStream"><a href="#PipedInputStream-和-PipedOutputStream" class="headerlink" title="PipedInputStream 和 PipedOutputStream"></a>PipedInputStream 和 PipedOutputStream</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 发送消息的线程.
  *
  * @author blinkfox on 2017/10/19.
@@ -705,8 +706,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 接收消息的线程.
  *
  * @author blinkfox on 2017/10/19.
@@ -738,8 +739,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * PipedInputStream 和 PipedOutputStream 的测试类.
  *
  * @author blinkfox on 2017/10/19.
@@ -768,8 +769,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
-<h3 id="SequenceInputStream"><a href="#SequenceInputStream" class="headerlink" title="SequenceInputStream"></a>SequenceInputStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SequenceInputStream"><a href="#SequenceInputStream" class="headerlink" title="SequenceInputStream"></a>SequenceInputStream</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试使用 testBySequenceStream 合并输入流来统一读取写入.
  */</span>
 <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testBySequenceStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -786,8 +787,8 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"合并输入流写入失败!"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 测试使用 PrintStream 将数据输出到指定的文件.
  */</span>
 <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testOutputByPrintStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -799,7 +800,7 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
         e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这些内容在文件中才能看到哦！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="遵循的设计原则"><a href="#遵循的设计原则" class="headerlink" title="遵循的设计原则"></a>遵循的设计原则</h2><ul>
 <li>单一职责原则：每一个IO类的都具有单独的功能和职责，需要对某种类型的流做修改时，只需要修改具体对应的IO流类即可。</li>
 <li>里氏替换原则：子类完全实现了父类的方法，且有自己的个性，子类覆盖或实现父类的方法时输入参数和返回结果的范围没有变化。</li>
@@ -1067,10 +1068,10 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-11-05T11-30-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1197,6 +1198,43 @@ FileInputStream: 继承自InputStream的文件输入流类，用于从">
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1456,6 +1494,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

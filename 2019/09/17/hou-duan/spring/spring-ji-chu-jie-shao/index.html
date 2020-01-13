@@ -28,7 +28,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -524,12 +525,12 @@
 <h2 id="二、Spring-项目快速搭建"><a href="#二、Spring-项目快速搭建" class="headerlink" title="二、Spring 项目快速搭建"></a>二、Spring 项目快速搭建</h2><p>这里我们使用目前 Java 主流的项目构建工具<a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a>来搭建项目。</p>
 <h3 id="（一）Maven-介绍"><a href="#（一）Maven-介绍" class="headerlink" title="（一）Maven 介绍"></a>（一）Maven 介绍</h3><p>Apache Maven 是一个基于项目对象模型（Project Object Model，POM）的软件项目管理工具。Maven 可用来管理项目的依赖、编译、打包、文档等信息。使用 Maven 来管理项目时，项目依赖的 jar 包将不再包含在项目内，而是集中放置在用户目录下的 .m2 文件夹下。关于 Maven 的详细安装介绍可参考<a href="http://blinkfox.com/linux-debianxia-mavende-an-zhuang-he-shi-yong/" target="_blank" rel="noopener">这里</a>。</p>
 <h3 id="（二）创建项目"><a href="#（二）创建项目" class="headerlink" title="（二）创建项目"></a>（二）创建项目</h3><p>在创建项目之前，须确保你的计算机上已经安装好有 Java 和 Maven 环境。然后，打开终端通过以下简单的命令就可以在你的当前目录下创建一个 Jave web 的项目结构：</p>
-<pre class=" language-bash"><code class="language-bash">mvn archetype:generate -DgroupId<span class="token operator">=</span>com.blinkfox -DartifactId<span class="token operator">=</span>springdemo -DpackageName<span class="token operator">=</span>com.blinkfox.springdemo -DarchetypeArtifactId<span class="token operator">=</span>maven-archetype-webapp -DinteractiveMode<span class="token operator">=</span>false</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">mvn archetype:generate -DgroupId<span class="token operator">=</span>com.blinkfox -DartifactId<span class="token operator">=</span>springdemo -DpackageName<span class="token operator">=</span>com.blinkfox.springdemo -DarchetypeArtifactId<span class="token operator">=</span>maven-archetype-webapp -DinteractiveMode<span class="token operator">=</span>false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>其中<code>-DgroupId=com.blinkfox</code>是组织名，<code>-DartifactId=springdemo</code>是该组织下的项目名称，<code>-DarchetypeArtifactId=maven-archetype-webapp</code>代表创建一个简单的 webapp 项目。</p>
 <p>创建项目的时候，Maven会自动下载一些需要用到的 jar 包和 Maven 插件。如果顺利创建成功的话，就会在你的当前目录下看到名为 springdemo 的项目，其中包含<code>src</code>的文件夹和<code>pom.xml</code>文件。且在你的终端会看到如下输出：</p>
 <p><img src="http://static.blinkfox.com/maven_build_project.png" alt="Maven创建项目成功"></p>
 <h3 id="（三）添加-Spring-依赖"><a href="#（三）添加-Spring-依赖" class="headerlink" title="（三）添加 Spring 依赖"></a>（三）添加 Spring 依赖</h3><p>接下来需要通过修改 pom.xml 来添加 Spring 的依赖，添加编译插件，且将编译级别设置为1.7，pom.xml文件的修改如下：</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">></span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>springdemo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
@@ -572,7 +573,7 @@
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="三、Spring-基础配置"><a href="#三、Spring-基础配置" class="headerlink" title="三、Spring 基础配置"></a>三、Spring 基础配置</h2><p>Spring 框架本身有四大原则：</p>
 <ul>
 <li>使用 POJO 进行轻量级和最小侵入式开发</li>
@@ -600,7 +601,7 @@
 </ul>
 <p><code>@Autowired</code>、<code>@Inject</code>、<code>@Resource</code>可注解在 set 方法上或者属性上，推荐注解在属性上，优点是代码更少、层次更清晰。</p>
 <h4 id="2-代码示例"><a href="#2-代码示例" class="headerlink" title="2. 代码示例"></a>2. 代码示例</h4><p>（1）编写功能类的 Bean。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
 
@@ -614,7 +615,7 @@
         <span class="token keyword">return</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> word <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -622,7 +623,7 @@
 </ol>
 </blockquote>
 <p>（2）使用功能类的 Bean。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
@@ -641,7 +642,7 @@
         <span class="token keyword">return</span> functionService<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -650,7 +651,7 @@
 </ol>
 </blockquote>
 <p>（3）配置类。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>ComponentScan<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
@@ -661,7 +662,7 @@
 <span class="token annotation punctuation">@Configuration</span>
 <span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span><span class="token string">"com.blinkfox.service.impl"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DiConfig</span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -670,7 +671,7 @@
 </ol>
 </blockquote>
 <p>（4）运行。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>maintest<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>maintest<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">.</span>DiConfig<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>UseFunctionService<span class="token punctuation">;</span>
@@ -689,7 +690,7 @@
         context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -705,7 +706,7 @@
 </ul>
 <p>何时使用 Java 配置或者注解配置呢？我们主要的原则是：全局配置使用 Java 配置（如数据库相关配置、MVC相关配置），业务 Bean 的配置使用注解配置（@Service、@Component、@Repository、@Controller）。</p>
 <h4 id="2-Java配置代码示例"><a href="#2-Java配置代码示例" class="headerlink" title="2. Java配置代码示例"></a>2. Java配置代码示例</h4><p>（1）编写功能类的 Bean</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  * Created by blinkfox on 2016/10/27.
@@ -717,7 +718,7 @@
         <span class="token keyword">return</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> word <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -725,7 +726,7 @@
 </ol>
 </blockquote>
 <p>（2）使用功能类的 Bean</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  * Created by blinkfox on 2016/10/27.
@@ -743,7 +744,7 @@
         <span class="token keyword">return</span> javaConfigService<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -752,7 +753,7 @@
 </ol>
 </blockquote>
 <p>（3）Java 配置类</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>JavaConfigService<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>UseJavaConfigService<span class="token punctuation">;</span>
@@ -777,7 +778,7 @@
         <span class="token keyword">return</span> useJavaConfigService<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -787,7 +788,7 @@
 </ol>
 </blockquote>
 <p>（4）运行</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>maintest<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>maintest<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">.</span>JavaConfig<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>UseJavaConfigService<span class="token punctuation">;</span>
@@ -806,7 +807,7 @@
         context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="（三）AOP"><a href="#（三）AOP" class="headerlink" title="（三）AOP"></a>（三）AOP</h3><h4 id="1-重点说明-2"><a href="#1-重点说明-2" class="headerlink" title="1. 重点说明"></a>1. 重点说明</h4><p>AOP：面向切面编程，是面向对象编程（OOP）的补充。</p>
 <p>Spring 的 AOP 的存在目的是为了解耦。AOP 可以让一组类共享相同的行为。在 OOP 中只能通过继承和实现接口来共享相同的行为，从而使代码的耦合度增强，且类继承只能为单继承，阻碍更多行为添加到一组类上，AOP 弥补了 OOP 的不足。</p>
 <p>Spring 支持 AspectJ 的注解式切面编程。</p>
@@ -818,7 +819,7 @@
 </ul>
 <p>Spring本身在事务处理（@Transcational）和数据缓存（@Cacheable）等都使用注解拦截。下面示例将演示基于注解和方法规则的拦截方式，演示一种模拟记录操作的日志系统的实现。</p>
 <h4 id="2-注解拦截代码示例"><a href="#2-注解拦截代码示例" class="headerlink" title="2. 注解拦截代码示例"></a>2. 注解拦截代码示例</h4><p>（1）添加 Spring aop 支持及 AspectJ 依赖。</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
     <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
     <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>aop<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
     <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">4.3</span><span class="token punctuation">.</span><span class="token number">3</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
@@ -832,9 +833,9 @@
     <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>aspectj<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
     <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>aspectjweaver<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
     <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.8</span><span class="token punctuation">.</span><span class="token number">9</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（2）编写拦截规则的注解。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>annotation<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>annotation<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 
@@ -848,12 +849,12 @@
 
     String <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">"这是默认的操作名称"</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：<br>注解本身是没有功能的，就和 xml 一样。注解和 xml 都是一种元数据，元数据即解释数据的数据，这就是所谓的配置。注解的功能来自用这个注解的地方。</p>
 </blockquote>
 <p>（3）编写使用注解的被拦截类。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>LogAction<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
@@ -869,9 +870,9 @@
 
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（4）编写使用方法规则被拦截规类。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
 
@@ -885,9 +886,9 @@
 
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（5）编写切面。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>aop<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>aop<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>LogAction<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>aspectj<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>JoinPoint<span class="token punctuation">;</span>
@@ -926,7 +927,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"---方法规则式拦截:"</span> <span class="token operator">+</span> method<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -939,7 +940,7 @@
 </ol>
 </blockquote>
 <p>（6）配置类。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>ComponentScan<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
@@ -953,7 +954,7 @@
 <span class="token annotation punctuation">@EnableAspectJAutoProxy</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AopConfig</span> <span class="token punctuation">{</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>代码解释</strong>：</p>
 <ol>
@@ -961,7 +962,7 @@
 </ol>
 </blockquote>
 <p>（6）运行。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>maintest<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>maintest<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>config<span class="token punctuation">.</span>AopConfig<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>blinkfox<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">.</span>DemoAnnotationService<span class="token punctuation">;</span>
@@ -983,7 +984,7 @@
         context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1236,10 +1237,10 @@
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-09-17T22-32-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1369,6 +1370,43 @@
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1628,6 +1666,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

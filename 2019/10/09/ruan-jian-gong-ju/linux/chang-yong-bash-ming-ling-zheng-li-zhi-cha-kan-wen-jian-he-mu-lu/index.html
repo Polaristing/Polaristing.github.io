@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -463,7 +464,7 @@
             <div id="articleContent">
                 <h2 id="1-ls-列出文件名和目录"><a href="#1-ls-列出文件名和目录" class="headerlink" title="1. ls - 列出文件名和目录"></a>1. ls - 列出文件名和目录</h2><p><code>ls</code>命令是<code>Linux</code>中最常用的命令之一，其作用就是列出文件名和目录。在命令行提示符下，直接输入<code>ls</code>命令，不带任何选项，将列出当前目录下所有文件和目录，但不会显示详细的信息，比如，文件类型、大小、修改日期和时间、权限等。</p>
 <p>以下便是<code>ls</code>命令及其选项的作用说明：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 仅列出当前目录下所有文件和目录</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 仅列出当前目录下所有文件和目录</span>
 <span class="token function">ls</span>
 
 <span class="token comment" spellcheck="true"># 每行显示一条记录，每条记录包括文件类型、大小、修改日期和时间、权限等</span>
@@ -494,12 +495,12 @@
 <span class="token function">ls</span> -A
 
 输出的内容类似于-l选项，指示显示uid和gid，替代显示所有者和用户组
-<span class="token function">ls</span> -n</code></pre>
+<span class="token function">ls</span> -n<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-cat-连接显示文件内容"><a href="#2-cat-连接显示文件内容" class="headerlink" title="2. cat - 连接显示文件内容"></a>2. cat - 连接显示文件内容</h2><p><code>cat</code> 命令也是Linux系统中最常用的命令之一。<code>cat</code>命令让我们可以看看文件的内容、连接文件、创建一个或多个文件和重定向输出到终端或文件。</p>
 <p><code>cat</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>cat</code>常用命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 cat 命令查看文件 /etc/group 的内容</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用 cat 命令查看文件 /etc/group 的内容</span>
 <span class="token function">cat</span> /etc/group
 
 <span class="token comment" spellcheck="true"># 显示多个文件的内容</span>
@@ -512,19 +513,19 @@
 <span class="token function">cat</span> -b /etc/fstab
 
 <span class="token comment" spellcheck="true"># -e 选项，将在每一行的结尾显示“$”字符</span>
-<span class="token function">cat</span> -e /etc/fstab</code></pre>
+<span class="token function">cat</span> -e /etc/fstab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>当你只输入 cat 命令，而没有任何参数时，它只是接收标准输入的内容并在标准输出中显示。所以你在输入一行内容并回车后，会在接下来的一行显示相同的内容。你也可以重定向标准输出到一个新文件。</p>
 </blockquote>
 <h2 id="3-less、more-分屏显示文件"><a href="#3-less、more-分屏显示文件" class="headerlink" title="3.less、more - 分屏显示文件"></a>3.less、more - 分屏显示文件</h2><p><code>more</code>命令在你使用小的xterm窗口时，或是想不使用文本编辑器而只是简单地阅读一个文件时是很有用的。more命令是一个用于一次翻阅一整屏文件的过滤器。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看一个文件，自动清空屏幕并显示文件开头部分</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看一个文件，自动清空屏幕并显示文件开头部分</span>
 <span class="token function">more</span> /etc/inittab
 
 <span class="token comment" spellcheck="true"># 指定一次显示num行</span>
-<span class="token function">more</span> -num /etc/inittab</code></pre>
+<span class="token function">more</span> -num /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>与<code>more</code>命令相比，我个人更喜欢<code>less</code>命令来查看文件。<code>less</code>命令与<code>more</code>命令类似，但<code>less</code>命令向前和向后翻页都支持，而且<code>less</code>命令不需要在查看前加载整个文件，即<code>less</code>命令查看文件更快速。</p>
 <p><code>less</code>常用命令参数如下：</p>
-<pre class=" language-bash"><code class="language-bash">-b  <span class="token operator">&lt;</span>缓冲区大小<span class="token operator">></span> 设置缓冲区的大小
+<pre class="line-numbers language-bash"><code class="language-bash">-b  <span class="token operator">&lt;</span>缓冲区大小<span class="token operator">></span> 设置缓冲区的大小
 -e  当文件显示结束后，自动离开
 -f  强迫打开特殊文件，例如外围设备代号、目录和二进制文件
 -g  只标志最后搜索的关键词
@@ -549,18 +550,18 @@ y  向前滚动一行
 空格键 滚动一行
 回车键 滚动一页
 <span class="token punctuation">[</span>pagedown<span class="token punctuation">]</span>： 向下翻动一页
-<span class="token punctuation">[</span>pageup<span class="token punctuation">]</span>：   向上翻动一页</code></pre>
+<span class="token punctuation">[</span>pageup<span class="token punctuation">]</span>：   向上翻动一页<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="4-head-显示文件头部"><a href="#4-head-显示文件头部" class="headerlink" title="4.head - 显示文件头部"></a>4.head - 显示文件头部</h2><p><code>head</code>命令用于打印指定输入的开头部分内容。默认情况下，打印每个指定输入的前10行内容。</p>
 <p>使用<code>-n</code>选项可以指定打印文件的前N行：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的前5行</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的前5行</span>
 <span class="token function">head</span> -n 5 /etc/inittab
 （或）head -5 /etc/inittab
 
 <span class="token comment" spellcheck="true"># 打印文件的前N个字节的数据</span>
-<span class="token function">head</span> -c 10 /etc/inittab</code></pre>
+<span class="token function">head</span> -c 10 /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-tail-显示文件尾部"><a href="#5-tail-显示文件尾部" class="headerlink" title="5.tail - 显示文件尾部"></a>5.tail - 显示文件尾部</h2><p><code>tail</code>命令和<code>head</code>命令相反，它打印指定输入的结尾部分的内容。默认情况下，它打印指定输入的最后10行内容。</p>
 <p>使用<code>-n</code>选项可以指定打印文件的最后N行：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的后10行</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定打印文件的后10行</span>
 <span class="token function">tail</span> -n 10 /etc/inittab
 <span class="token function">tail</span> -10 /etc/inittab
 
@@ -568,21 +569,21 @@ y  向前滚动一行
 <span class="token function">tail</span> -f /var/log/messages
 
 <span class="token comment" spellcheck="true"># --retry选项表示持续尝试打开某个文件，当你想打开一个稍后才会创建或即使不可用的文件</span>
-<span class="token function">tail</span> -f /tmp/debug.log --retry</code></pre>
+<span class="token function">tail</span> -f /tmp/debug.log --retry<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-file-查看文件类型"><a href="#6-file-查看文件类型" class="headerlink" title="6.file - 查看文件类型"></a>6.file - 查看文件类型</h2><p><code>file</code>命令用于接收一个文件作为参数并执行某些测试，已确定正确的文件类型。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看文件类型</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看文件类型</span>
 <span class="token function">file</span> /etc/inittab
 
 <span class="token comment" spellcheck="true"># 可以MIME类型的格式显示文件类型的信息</span>
 <span class="token function">file</span> -i  /etc/inittab
 
 <span class="token comment" spellcheck="true"># 使用-N 选项，输出的队列可以以在文件名之后无空白填充的形式显示</span>
-<span class="token function">file</span> -N *</code></pre>
+<span class="token function">file</span> -N *<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="7-wc-查看文件统计信息"><a href="#7-wc-查看文件统计信息" class="headerlink" title="7.wc - 查看文件统计信息"></a>7.wc - 查看文件统计信息</h2><p><code>wc</code>命令用于查看文件的行数、单词数和字符数等信息。语法类似如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">wc</span> filename
-X Y Z /etc/inittab</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wc</span> filename
+X Y Z /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>其中X表示行数，Y表示单词数，Z表示字节数，filename表示文件名。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># -l选项，可以只统计文件的行数信息</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># -l选项，可以只统计文件的行数信息</span>
 <span class="token function">wc</span> -l /etc/inittab
 
 <span class="token comment" spellcheck="true"># -w选项，可以只统计文件的单词数信息</span>
@@ -592,10 +593,10 @@ X Y Z /etc/inittab</code></pre>
 <span class="token function">wc</span> -c /etc/inittab
 
 <span class="token comment" spellcheck="true"># -L选项，可以只统计文件中最长的行的长度</span>
-<span class="token function">wc</span> -L /etc/inittab</code></pre>
+<span class="token function">wc</span> -L /etc/inittab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="8-find-查找文件或目录"><a href="#8-find-查找文件或目录" class="headerlink" title="8.find - 查找文件或目录"></a>8.find - 查找文件或目录</h2><p><code>find</code>命令用于根据你指定的参数搜索和定位文件和目录的列表。<code>find</code>命令可以在多种情况下使用，比如你可以通过权限、用户、用户组、文件类型、日期、大小和其他可能的条件来查找文件。</p>
 <p><code>find</code>命令常用使用和说明如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查找指定目录下的某个文件</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查找指定目录下的某个文件</span>
 <span class="token function">find</span> /etc/ -name inittab
 
 <span class="token comment" spellcheck="true"># 在当前目录下查找名称为 inittab 的文件</span>
@@ -662,7 +663,7 @@ X Y Z /etc/inittab</code></pre>
 <span class="token function">find</span> ~ -type f -size +50MB -size -100MB
 
 <span class="token comment" spellcheck="true"># 找出你账号主目录下，大于100MB的文件并将其删除</span>
-<span class="token function">find</span> ~ -type f -size +100MB -exec <span class="token function">rm</span> -rf <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span></code></pre>
+<span class="token function">find</span> ~ -type f -size +100MB -exec <span class="token function">rm</span> -rf <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -911,10 +912,10 @@ X Y Z /etc/inittab</code></pre>
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-10-09T22-45-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1044,6 +1045,43 @@ X Y Z /etc/inittab</code></pre>
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1303,6 +1341,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

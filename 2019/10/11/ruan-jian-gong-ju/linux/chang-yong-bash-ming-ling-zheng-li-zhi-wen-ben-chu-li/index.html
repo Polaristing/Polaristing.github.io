@@ -32,7 +32,8 @@ sort example.txt
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -468,7 +469,7 @@ sort example.txt
             <div id="articleContent">
                 <h2 id="1-sort-文本排序"><a href="#1-sort-文本排序" class="headerlink" title="1. sort - 文本排序"></a>1. sort - 文本排序</h2><p><code>sort</code>命令用于将文本文件的行排序。默认情况下，<code>sort</code>命令是按照字符串的字母顺序排序。</p>
 <p>sort 的常用命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 将文本内容按字母顺序排序</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 将文本内容按字母顺序排序</span>
 <span class="token function">sort</span> example.txt
 
 <span class="token comment" spellcheck="true"># 使用 -u 选项，移除所有重复行后排序</span>
@@ -481,9 +482,9 @@ sort example.txt
 <span class="token function">sort</span> -n -r example.txt
 
 <span class="token comment" spellcheck="true"># 同时将 file1、file2 的内容排序</span>
-<span class="token function">sort</span> file1 file2</code></pre>
+<span class="token function">sort</span> file1 file2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-uniq-文本去重"><a href="#2-uniq-文本去重" class="headerlink" title="2.uniq - 文本去重"></a>2.uniq - 文本去重</h2><p><code>uniq</code>命令用于移除或发现文件中重复的条目。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 它将移除文件中重复的行并显示单一行</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 它将移除文件中重复的行并显示单一行</span>
 <span class="token function">uniq</span> example.txt
 
 <span class="token comment" spellcheck="true"># 可以统计重复行出现的次数</span>
@@ -505,12 +506,12 @@ sort example.txt
 <span class="token function">uniq</span> -s 3 example.txt
 
 <span class="token comment" spellcheck="true"># 使用 -f 选项，避免 uniq 命令比较第一列的内容，只比较后面的字符是否重复</span>
-<span class="token function">uniq</span> -f 1 example.txt</code></pre>
+<span class="token function">uniq</span> -f 1 example.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-tr-替换或删除字符"><a href="#3-tr-替换或删除字符" class="headerlink" title="3.tr - 替换或删除字符"></a>3.tr - 替换或删除字符</h2><p><code>tr</code>命令主要用于删除文件中控制字符或进行字符转换。使用<code>tr</code>时要转换两个字符串：字符串 1 用于查询，字符串 2 用于处理各种转换。<code>tr</code>刚执行时，字符串 1 中的字符被映射到字符串 2 中的字符，然后转换操作开始。</p>
 <p><code>tr</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. SET1 <span class="token punctuation">[</span>SET2<span class="token punctuation">]</span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tr</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. SET1 <span class="token punctuation">[</span>SET2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>常用命令示例：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 若要将大括号转换为小括号</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 若要将大括号转换为小括号</span>
 <span class="token function">tr</span> <span class="token string">'{}'</span> <span class="token string">'()'</span> <span class="token operator">&lt;</span> textfile <span class="token operator">></span> newfile
 
 <span class="token comment" spellcheck="true"># 若要将大括号转换成方括号</span>
@@ -529,12 +530,12 @@ sort example.txt
 <span class="token function">tr</span> -s <span class="token string">'\n'</span> <span class="token operator">&lt;</span> textfile <span class="token operator">></span> newfile
 
 <span class="token comment" spellcheck="true"># 要以单个“#”字符替换 &lt;space> 字符类中的每个字符序列</span>
-<span class="token function">tr</span> -s <span class="token string">'[:space:]'</span> <span class="token string">'[#*]'</span></code></pre>
+<span class="token function">tr</span> -s <span class="token string">'[:space:]'</span> <span class="token string">'[#*]'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="4-grep-查找字符串"><a href="#4-grep-查找字符串" class="headerlink" title="4.grep - 查找字符串"></a>4.grep - 查找字符串</h2><p><code>grep</code>命令用于搜索文本或指定的文件中与指定的字符串或模式相匹配的行。默认情况下，<code>grep</code>命令只显示匹配的行。</p>
 <p><code>grep</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. PATTERN <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-<span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-e PATTERN <span class="token operator">|</span> -f FILE<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># `grep`命令查找文件/etc/passwd 中帐号 blinkfox 的信息</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. PATTERN <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
+<span class="token function">grep</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-e PATTERN <span class="token operator">|</span> -f FILE<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># `grep`命令查找文件/etc/passwd 中帐号 blinkfox 的信息</span>
 <span class="token function">grep</span> blinkfox /etc/passwd
 
 <span class="token comment" spellcheck="true"># 使用 -i 选项，强制 grep 命令忽略搜索关键字的大小写</span>
@@ -556,11 +557,11 @@ sort example.txt
 <span class="token function">grep</span> -v blinkfox /etc/passwd
 
 <span class="token comment" spellcheck="true"># 使用 --color 选项，在输出中将匹配的字符串以彩色的形式标出</span>
-<span class="token function">grep</span> --color blinkfox /etc/passwd</code></pre>
+<span class="token function">grep</span> --color blinkfox /etc/passwd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-diff-比较两个文件"><a href="#5-diff-比较两个文件" class="headerlink" title="5.diff - 比较两个文件"></a>5.diff - 比较两个文件</h2><p><code>diff</code>命令用于比较两个文件，并找出它们之间的不同。<code>diff</code>命令的语法如下所示：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. from-file to-file</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">diff</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. from-file to-file<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>常用使用方式如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 比较两个文件</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 比较两个文件</span>
 <span class="token function">diff</span> nsswitch.conf nsswitch.conf.org
 
 <span class="token comment" spellcheck="true"># 使用 -w 选项，比较时忽略空格</span>
@@ -570,7 +571,7 @@ sort example.txt
 <span class="token function">diff</span> -y nsswitch.conf nsswitch.conf.org
 
 使用 -c 选项，以上下对比的格式输出两个文件的比较结果
-<span class="token function">diff</span> -c nsswitch.conf nsswitch.conf.org</code></pre>
+<span class="token function">diff</span> -c nsswitch.conf nsswitch.conf.org<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -819,10 +820,10 @@ sort example.txt
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-10-11T22-05-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -956,6 +957,43 @@ hostname blinkfo
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1215,6 +1253,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

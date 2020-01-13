@@ -27,7 +27,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -494,7 +495,7 @@
 </ul>
 <h2 id="三、Collections中Map的使用示例"><a href="#三、Collections中Map的使用示例" class="headerlink" title="三、Collections中Map的使用示例"></a>三、Collections中Map的使用示例</h2><h3 id="1-Map迭代器之mapIterator"><a href="#1-Map迭代器之mapIterator" class="headerlink" title="1. Map迭代器之mapIterator"></a>1. Map迭代器之mapIterator</h3><p><code>jdk</code>中的<code>Map</code>接口很难进行迭代。<code>api</code>用户总是需要通过<code>entryset</code>或者<code>keyset</code>进行迭代。<code>commons-collectons</code>现在提供了一个新的接口 - <code>mapIterator</code>来允许对<code>maps</code>进行简单的迭代。示例如下：</p>
 <p>(1)、构造Map初始数据的方法：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 构建map初始数据
  * @param map
  */</span>
@@ -504,9 +505,9 @@
     map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"three"</span><span class="token punctuation">,</span> <span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"four"</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> map<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>(2)、使用MapIterator迭代数据的方法：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * map迭代器
  * 遍历打印map,使用map.mapIterator()
  * @param map
@@ -521,10 +522,10 @@
         Object value <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"iterator map key:"</span> <span class="token operator">+</span> key <span class="token operator">+</span> <span class="token string">", value: "</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-有序map之LinkedMap"><a href="#2-有序map之LinkedMap" class="headerlink" title="2. 有序map之LinkedMap"></a>2. 有序map之LinkedMap</h3><p><code>LinkedMap</code>是一个可以维护Map中条目顺序的Map实现，条目顺序由最初的数据插入时来决定。同时也增加上面所说的<code>MapIterator</code>功能和一些便利的方法，并允许进行双向迭代。相较于<code>JDK1.4</code>中的<code>LinkedHashMap</code>效率有所提高，它还实现了<code>OrderedMap</code>接口。此外，还提供了非接口方法通过索引来访问Map中的数据。<strong>需要注意的是LinkedMap不是同步的，不是线程安全的</strong>。如果你想使用<code>LinkedMap</code>的同时使用多个线程，您必须使用适当的同步操作。最简单的方法是使用<code>Collections.synchronizedMap(Map)</code>来包装<code>LinkedMap</code>。如果不使用同步操作，当并发线程访问这个类时可能会抛出异常。</p>
 <p>LinkedMap的一些代码示例代码如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 有序map之LinkedMap
  */</span>
 <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">linkedMapTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -536,9 +537,9 @@
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"LinkedMap next key:"</span> <span class="token operator">+</span> orderMap<span class="token punctuation">.</span><span class="token function">nextKey</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"LinkedMap last key:"</span> <span class="token operator">+</span> orderMap<span class="token punctuation">.</span><span class="token function">lastKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"LinkedMap map Size:"</span> <span class="token operator">+</span> orderMap<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-双向Map之BidiMap"><a href="#3-双向Map之BidiMap" class="headerlink" title="3. 双向Map之BidiMap"></a>3. 双向Map之BidiMap</h3><p>所谓<code>BidiMap</code>，直译就是双向<code>Map</code>，可以通过<code>key</code>找到<code>value</code>，也可以通过<code>value</code>找到<code>key</code>，这在我们日常的代码-名称匹配的时候很方便：因为我们除了需要通过代码找到名称之外，往往也需要处理用户输入的名称，然后获取其代码。需要注意的是BidiMap当中不光key不能重复，value也不可以重复。基本使用示例如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * BidiMap,是双向Map
  * 通过key得到value
  * 通过value得到key
@@ -560,18 +561,18 @@
 
     <span class="token comment" spellcheck="true">// 交换map的key和value</span>
     BidiMap inversMap <span class="token operator">=</span> bidiMap<span class="token punctuation">.</span><span class="token function">inverseBidiMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-多值Map之MultiMap"><a href="#4-多值Map之MultiMap" class="headerlink" title="4. 多值Map之MultiMap"></a>4. 多值Map之MultiMap</h3><p>所谓<code>MultiMap</code>，就是说单个<code>key</code>可以对应多个<code>value</code>,在<code>put</code>或<code>remove</code>时和普通<code>Map</code>没有区别,但当<code>get</code>时将返回多个<code>value</code>,所以返回一个<code>collections</code>,利用<code>MultiMap</code>，我们就可以很方便的往一个<code>key</code>上放数量不定的对象，也就实现了一对多。在3.2.1版本中<code>MultiHashMap</code>已被废除,请使用<code>MultiValueMap</code>。简单的使用示例如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">multiMapTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">multiMapTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     MultiMap multiMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MultiValueMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     multiMap <span class="token operator">=</span> <span class="token function">multibuildMap</span><span class="token punctuation">(</span>multiMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
     multiMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"three"</span><span class="token punctuation">,</span> <span class="token string">"5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token punctuation">(</span>List<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">)</span> multiMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"three"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 会打印: list:[3, 5]</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"list:"</span> <span class="token operator">+</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-“懒加载”Map之LazyMap"><a href="#5-“懒加载”Map之LazyMap" class="headerlink" title="5. “懒加载”Map之LazyMap"></a>5. “懒加载”Map之LazyMap</h3><p>所谓<code>LazyMap</code>，意思就是这个<code>Map</code>中的键/值对一开始并不存在，当被调用到时才会创建，这样的解释初听上去是不是有点不可思议，这样的<code>LazyMap</code>有用吗？我们这样来理解：我们需要一个<code>Map</code>，但是由于创建成员的方法很“重”（比如数据库访问），或者我们只有在调用<code>get()</code>时才知道如何创建，或者<code>Map</code>中出现的可能性很多很多，我们无法在<code>get()</code>之前添加所有可能出现的键/值对，或者任何其它解释得通的原因，我们觉得没有必要去初始化一个<code>Map</code>而又希望它可以在必要时自动处理数据生成的话，<code>LazyMap</code>就变得很有用了。简单的使用示例如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * LazyMap.类似与Hibenrate的懒加载,在声明的时候并不会创建,
  * 而是在使用(get)的时候,才创建集合的内容,返回Factory的返回值
  * 实现懒加载,当我们觉得没有必要去初始化一个Map而又希望它可以在必要时自动处理数据可以使用LazyMap
@@ -595,7 +596,7 @@
     <span class="token comment" spellcheck="true">// 有key对应的值时,返回123</span>
     lazyMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"map:"</span> <span class="token operator">+</span> lazyMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>Apache Commons Collections</code>中的基本<code>map</code>的接口类型和使用方法，不仅有上面这些，还有很多细分的、拥有不同功能或者各功能会有交叉的<code>map</code>，等着我们在自己工作中去使用挖掘吧！</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -849,10 +850,10 @@
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-09-13T23-40-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -975,6 +976,43 @@
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1234,6 +1272,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>

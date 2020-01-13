@@ -28,7 +28,8 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -501,7 +502,7 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
 <li><strong>操作结果</strong>：数据库字段类型为 <code>int</code> 型，只能下拉选择一个选项值来进行<strong>等值查询</strong>（<code>=</code>）；</li>
 <li><strong>操作时间</strong>：数据库字段类型为 <code>datetime</code> 型，可以选择开始时间或者结束时间来进行<strong>区间查询</strong>（<code>BETWEEN ? AND ?</code>、<code>&gt;=</code>、<code>&lt;=</code>）；</li>
 </ul>
-<h3 id="MyBatis-的-SQL-写法"><a href="#MyBatis-的-SQL-写法" class="headerlink" title="MyBatis 的 SQL 写法"></a>MyBatis 的 SQL 写法</h3><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<h3 id="MyBatis-的-SQL-写法"><a href="#MyBatis-的-SQL-写法" class="headerlink" title="MyBatis 的 SQL 写法"></a>MyBatis 的 SQL 写法</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token doctype">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd"></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.blinkfox.example.repository.mapper.OperationLogMapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -553,8 +554,8 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>trim</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="Fenix-的-SQL-写法"><a href="#Fenix-的-SQL-写法" class="headerlink" title="Fenix 的 SQL 写法"></a>Fenix 的 SQL 写法</h3><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Fenix-的-SQL-写法"><a href="#Fenix-的-SQL-写法" class="headerlink" title="Fenix 的 SQL 写法"></a>Fenix 的 SQL 写法</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
 <span class="token comment" spellcheck="true">&lt;!-- 操作日志的 SQL 仓库. --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fenixs</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>OperationLogRepository<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
@@ -577,7 +578,7 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>andBetween</span> <span class="token attr-name">field</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ol.createTime<span class="token punctuation">"</span></span> <span class="token attr-name">start</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>log.startTime<span class="token punctuation">"</span></span> <span class="token attr-name">end</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>log.endTime<span class="token punctuation">"</span></span> <span class="token attr-name">match</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(log.startTime !<span class="token punctuation">=</span> empty) || (log.endTime !<span class="token punctuation">=</span> empty)<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fenix</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fenixs</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fenixs</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="MyBatis-与-Fenix-的比较总结"><a href="#MyBatis-与-Fenix-的比较总结" class="headerlink" title="MyBatis 与 Fenix 的比较总结"></a>MyBatis 与 Fenix 的比较总结</h3><p><code>MyBatis</code> 和 <code>Fenix</code> 的 SQL 有以下几个差异点：</p>
 <ul>
 <li>MyBatis 只能写原生 SQL，无法享受跨数据库时的兼容性；由于 Fenix 是基于 Spring Data JPA 的扩展，即可以写 <code>JPQL</code> 语句，也可以写原生 <code>SQL</code> 语句，上述示例中写的是 <code>JPQL</code> 语句，SQL 的字段表达上更简洁。</li>
@@ -593,14 +594,14 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
 <blockquote>
 <p><strong>注</strong>：如果不是 Spring Boot 项目，请参看<a href="https://blinkfox.github.io/fenix/#/quick-install?id=not-spring-boot-project" target="_blank" rel="noopener">这里</a>。</p>
 </blockquote>
-<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><pre class=" language-bash"><code class="language-bash">compile <span class="token string">'com.blinkfox:fenix-spring-boot-starter:1.0.1'</span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><pre class="line-numbers language-bash"><code class="language-bash">compile <span class="token string">'com.blinkfox:fenix-spring-boot-starter:1.0.1'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="激活-Fenix-FactoryBean"><a href="#激活-Fenix-FactoryBean" class="headerlink" title="激活 Fenix FactoryBean"></a>激活 Fenix FactoryBean</h3><p>然后需要在你的 Spring Boot 应用的 <code>@EnableJpaRepositories</code> 注解中，配置<br><code>repositoryFactoryBeanClass</code> 的属性值为 <code>FenixJpaRepositoryFactoryBean.class</code>。</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 请在 Spring Boot 应用中配置 {@link EnableJpaRepositories#repositoryFactoryBeanClass}
  * 的值为 {@link FenixJpaRepositoryFactoryBean}.
  *
@@ -613,13 +614,13 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>DemoApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><strong>注</strong>： <code>FenixJpaRepositoryFactoryBean</code> 继承自 Spring Data JPA 默认的 <code>JpaRepositoryFactoryBean</code>。所以，Fenix 与 JPA 的各种注解和特性完全兼容，并提供了更加强大的 <code>@QueryFenix</code> 注解。</p>
 </blockquote>
 <h3 id="application-yml-配置项"><a href="#application-yml-配置项" class="headerlink" title="application.yml 配置项"></a>application.yml 配置项</h3><p>要修改 Fenix 的配置信息，你需要在你的 Spring Boot 项目中，在 <code>application.yml</code> 或者 <code>application.properties</code> 中去修改配置信息。</p>
 <p>以下通过 <code>application.yml</code> 文件来说明 Fenix 中的几个配置项、默认值和说明信息，供你参考。</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Fenix 的几个配置项、默认值及详细说明，通常情况下你不需要填写这些配置信息.</span>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Fenix 的几个配置项、默认值及详细说明，通常情况下你不需要填写这些配置信息.</span>
 <span class="token key atrule">fenix</span><span class="token punctuation">:</span>
   <span class="token comment" spellcheck="true"># 成功加载 Fenix 配置信息后，是否打印启动 banner，默认 true.</span>
   <span class="token key atrule">print-banner</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -631,7 +632,7 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
   <span class="token key atrule">xml-locations</span><span class="token punctuation">:</span> fenix
   <span class="token comment" spellcheck="true"># 扫描你自定义的 XML 标签处理器的位置，默认为空，可以是包路径，也可以是 Java 或 class 文件的全路径名</span>
   <span class="token comment" spellcheck="true"># 可以配置多个值，不过一般情况下，你不自定义自己的 XML 标签和处理器的话，不需要配置这个值.</span>
-  handler<span class="token punctuation">-</span>locations<span class="token punctuation">:</span></code></pre>
+  handler<span class="token punctuation">-</span>locations<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="开源许可证"><a href="#开源许可证" class="headerlink" title="开源许可证"></a>开源许可证</h2><p>本 <code>Fenix</code> 的 Spring Data JPA 扩展库遵守 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a> 许可证。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -889,10 +890,10 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: '2e56c9f3a90b6e8fb4f0',
-        clientSecret: 'ba491ea79bbff85ec80b88db79e210b474a9cbc8',
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
         repo: 'polaristing.github.io',
-        owner: '思洁入梦',
+        owner: 'Polaristing',
         admin: ["Polaristing"],
         id: '2019-08-20T00-10-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1016,6 +1017,43 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -1275,6 +1313,11 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
 
 </html>
