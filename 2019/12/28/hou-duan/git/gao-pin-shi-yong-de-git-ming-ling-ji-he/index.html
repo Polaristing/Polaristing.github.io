@@ -1,0 +1,1689 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="高频使用的 Git 命令集合, 思洁入梦, Polaristing">
+    <meta name="description" content="前言汇总下我在项目中高频使用的git命令及姿势
+
+
+不是入门文档，官方文档肯定比我全面，这里是结合实际业务场景输出
+使用的 Git版本：git version 2.24.0
+git log查看日志，常规操作，必备
+# 输出概要日志,这条命令">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>高频使用的 Git 命令集合 | 思洁入夢</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">思洁入夢</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">思洁入夢</div>
+        <div class="logo-desc">
+            
+            Brief is life,but love is long
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Polaristing/hexo-theme-matery.git" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Polaristing/hexo-theme-matery.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">高频使用的 Git 命令集合</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/springboot/">
+                                <span class="chip bg-color">springboot</span>
+                            </a>
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/git/" class="post-category">
+                                git
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-28
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>汇总下我在项目中高频使用的git命令及姿势</p>
+<a id="more"></a>
+
+<p>不是入门文档，官方文档肯定比我全面，这里是结合实际业务场景输出</p>
+<p>使用的 Git版本：git version 2.24.0</p>
+<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3><p>查看日志，常规操作，必备</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 输出概要日志,这条命令等同于</span>
+<span class="token comment" spellcheck="true"># git log --pretty=oneline --abbrev-commit</span>
+<span class="token function">git</span> log --oneline
+
+<span class="token comment" spellcheck="true"># 指定最近几个提交可以带上 - + 数字</span>
+<span class="token function">git</span> log --oneline -5
+
+<span class="token comment" spellcheck="true"># 提供类似 GUI 工具的 log 展示</span>
+<span class="token function">git</span> log --graph --date<span class="token operator">=</span>relative --pretty<span class="token operator">=</span>tformat:<span class="token string">'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/2019/12/28/6b96a520-2987-11ea-9c54-0994549fb268.png" alt="image.png"></p>
+<h3 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h3><p>查看工作区状态的东东，不如GUI直观，但是命令行也有一些用的</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 等同 git status --long,查看当前工作区暂存区变动</span>
+<span class="token function">git</span> status
+
+<span class="token comment" spellcheck="true"># 概要信息 (--short)</span>
+<span class="token function">git</span> status -s
+
+<span class="token comment" spellcheck="true"># 查询工作区中是否有stash存在（暂存的东西）,有则提醒该工作区有几个 stash</span>
+<span class="token function">git</span> status  --show-stash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><p>用来切换到对应记录的,可以基于分支,提交,标签。</p>
+<p>切提交和标签一般用来热修复或者老版本需要加新特性。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 分支切换</span>
+<span class="token function">git</span> checkout dev <span class="token comment" spellcheck="true"># local branch</span>
+
+<span class="token comment" spellcheck="true"># 切换远程分支</span>
+<span class="token function">git</span> checkout origin/test <span class="token comment" spellcheck="true"># remote branch</span>
+
+<span class="token comment" spellcheck="true"># 基于远程分支创建本地分支，并跟踪对应来自 'origin' 的远程分支</span>
+<span class="token function">git</span> checkout --track origin/feature-test <span class="token comment" spellcheck="true"># new local branch wih remote branch</span>
+
+<span class="token comment" spellcheck="true"># 基于本地分支开出新分支</span>
+<span class="token function">git</span> checkout -b testbranch <span class="token comment" spellcheck="true"># new local branch with current branch</span>
+
+<span class="token comment" spellcheck="true"># 彻底丢弃某个文件的改动</span>
+<span class="token function">git</span> checkout -- <span class="token function">file</span>
+
+<span class="token comment" spellcheck="true"># 放弃本地所有改动</span>
+<span class="token function">git</span> checkout <span class="token keyword">.</span>
+
+<span class="token comment" spellcheck="true"># 切换上一个分支</span>
+<span class="token function">git</span> checkout -<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><p>天天打交道的命令，这里说一些很常见的姿势</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 新修改的内容,添加到上次提交中,减少提交的日志</span>
+<span class="token comment" spellcheck="true"># --no-edit:是跳过进入编辑器，直接提交</span>
+<span class="token comment" spellcheck="true"># git commit --amend这条命令等同于</span>
+<span class="token comment" spellcheck="true"># $ git reset --soft HEAD^</span>
+<span class="token comment" spellcheck="true"># $ ... do something  tree ...</span>
+<span class="token comment" spellcheck="true"># $ git commit -c ORIG_HEAD</span>
+<span class="token function">git</span> commit --amend --no-edit
+
+<span class="token comment" spellcheck="true"># 跳过校验直接提交,包括任何 githooks</span>
+<span class="token function">git</span> commit --no-verify -m <span class="token string">"xxx"</span>
+
+<span class="token comment" spellcheck="true"># 带提交概要信息</span>
+<span class="token function">git</span> commit -m <span class="token string">"xxx"</span>
+
+<span class="token comment" spellcheck="true"># 指定目录格式提交</span>
+<span class="token comment" spellcheck="true"># -t &lt;file>, --template=&lt;file></span>
+<span class="token comment" spellcheck="true"># 也可以从全局或者项目级别指定提交的模板文件</span>
+<span class="token comment" spellcheck="true"># git config [--global] commit.template xxx</span>
+<span class="token comment" spellcheck="true"># 现在一般都是 用社区的npm规范包，commitizen 和 commitlint 来规范提交</span>
+<span class="token function">git</span> commit -t templateFile
+
+<span class="token comment" spellcheck="true"># 提交信息从文件读取,可以结合上面的一起用</span>
+<span class="token function">git</span> commit -F<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h3><p>不得不说，代码回滚中这个命令也是用的很多，而且是 –hard</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 硬性回滚,简单粗暴，直接抛弃回滚之后改动(log 还是有保留，内容不要而已)</span>
+<span class="token function">git</span> reset --hard commit_sha1
+
+<span class="token comment" spellcheck="true"># 软性回滚, 跟 rebase 常规用法差不多的效果，可以把提交的东西丢回暂存区和工作区，</span>
+<span class="token comment" spellcheck="true"># HEAD 的指向改变会对应的 commit,之后再考虑怎么 commit</span>
+<span class="token function">git</span> reset --soft commit_sha1
+
+<span class="token comment" spellcheck="true"># 软回滚一个版本,可以理解为撤销最近一次的 commit</span>
+<span class="token function">git</span> reset --soft HEAD~1
+
+<span class="token comment" spellcheck="true"># 清除暂存区但保留工作区变动。</span>
+<span class="token function">git</span> reset --mixed commit_sha1
+
+<span class="token comment" spellcheck="true"># 保留工作区和暂存区之间的差异。</span>
+<span class="token function">git</span> reset --merge commit_sha1
+
+<span class="token comment" spellcheck="true"># 保留工作区和HEAD之间的差异</span>
+<span class="token function">git</span> reset --keep commit_sha1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h3><p>一般用于master 的代码回滚，因为多人在上面协作，</p>
+<p>revert 可以平稳的回滚代码,但却保留提交记录,不会让协作的人各种冲突！</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 回滚到某个 commit</span>
+<span class="token function">git</span> revert commit-sha1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h3><p>变基在项目中算是很频繁的，为什么这么说。</p>
+<p>比如你开发一个新的 feature, 遵循最小化代码提交的理念。</p>
+<p>在整个功能开发完毕的时侯，会有非常多的 commit，用 rebase 可以让我们的commit记录很干净</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 带 -i 可以进入交互模式，效果如下</span>
+<span class="token function">git</span> rebase -i git-sha1<span class="token operator">|</span>branch<span class="token punctuation">(</span>HEAD<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 若是中间毫无冲突，变基则一步到位，否则需要逐步调整。</span>
+<span class="token function">git</span> rebase --continue <span class="token comment" spellcheck="true"># 提交变更后继续变基下一步</span>
+<span class="token function">git</span> rebase --skip <span class="token comment" spellcheck="true"># 引起冲突的commits会被丢弃，continue提示没有需要改动的也可以用这个跳过</span>
+<span class="token function">git</span> rebase --abort <span class="token comment" spellcheck="true"># 若是变基改残废了，但是走到一半，可以彻底回滚变基之前的状态</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/images/2019/12/28/1e114c90-2989-11ea-9c54-0994549fb268.png" alt="image.png"></p>
+<ul>
+<li>pick: 是保留该 commit(采用)</li>
+<li>edit: 一般你提交的东西多了,可以用这个把东东拿回工作区拆分更细的 commit</li>
+<li>reword: 这个可以重新修改你的 commit msg</li>
+<li>squash: 内容保留，把提交信息往上一个 commit 合并进去</li>
+<li>fixup: 保留变动内容，但是抛弃 commit msg</li>
+<li>drop: 用的比较少，无用的改动你会提交么！！！</li>
+</ul>
+<p>突然发现截图还有几个新的行为，估计是新版本带来的，从字面上就可以看出来大体的意思, 就是把回滚和打标签这些放到变基中简化操作</p>
+<blockquote>
+<p>温馨提示</p>
+</blockquote>
+<ul>
+<li>本地提交之前，最好把基准点变为需要合并的分支，这样提交 PR/MR 的时侯就不会冲突(本地来解决冲突)</li>
+<li>不要在公共分支上变基！！！一变其他协作者基本都一堆冲突！除非你们有很清晰的分支管理机制</li>
+</ul>
+<h3 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># --ff 是指fast-forward命令,当使用ff模式进行合并时，将不会创造一个新的commit节点。</span>
+<span class="token comment" spellcheck="true"># --no-ff,保留合并分支的提交记录,一般主干用的比较多.</span>
+<span class="token comment" spellcheck="true"># --ff-only 除非当前HEAD节点为最新节点或者能够用ff模式进行合并，否则拒绝合并并返回一个失败状态。</span>
+<span class="token comment" spellcheck="true"># --squash 则类似 rebase squash,可以把合并多个 commit 变成一个</span>
+<span class="token function">git</span> merge --no-ff branchName<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>git pull中用的最多是带–rebase(-r)的方式(变基形式拉取合并代码),保持分支一条线。</p>
+<p>默认的pull会走ff模式,多数情况会产生新的commit,部分参数与 merge提供一致。</p>
+<h3 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h3><p>当本地分支存在，远程分支不存在的时侯，可以这样推送关联的远程分支</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 这样会直接新建一个同名的远程分支</span>
+<span class="token function">git</span> push origin localbranch 
+
+
+<span class="token comment" spellcheck="true"># 删除远程分支(--delete)</span>
+<span class="token function">git</span> push -d origin branchName
+
+<span class="token comment" spellcheck="true"># 推送所有标签</span>
+<span class="token function">git</span> push --tags
+
+<span class="token comment" spellcheck="true"># 推送 commit 关联的 tags</span>
+<span class="token function">git</span> push --follow-tags
+
+<span class="token comment" spellcheck="true"># 强制推送(--force)</span>
+<span class="token function">git</span> push -f origin branchName <span class="token comment" spellcheck="true"># 一般合理的项目，主干都做了分支保护,不会允许强推行为</span>
+
+<span class="token comment" spellcheck="true"># 有时候真的需要强推的时侯,但可不可以柔和一点呢？</span>
+<span class="token comment" spellcheck="true"># 就是当前远程分支和你本地一致,没有别人提交的情况下可以强推</span>
+<span class="token comment" spellcheck="true"># --force-with-lease: 若是远程有人提交，此次强推失败，反之成功</span>
+<span class="token function">git</span> push --force-with-lease<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h3><p>这个东西用在你需要考虑维护多个地方仓库的时侯会考虑，或者修改仓库源的时侯</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 常规关联本地 git init 到远程仓库的姿势</span>
+<span class="token function">git</span> remote add origin url
+
+<span class="token comment" spellcheck="true"># 新增其他上游仓</span>
+<span class="token function">git</span> remote add github url
+
+<span class="token comment" spellcheck="true"># 修改推送源</span>
+<span class="token function">git</span> remote set-url  origin<span class="token punctuation">(</span>或者其他上游域<span class="token punctuation">)</span> url<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h3><p>该命令用的最多的就是删除本地分支，重命名分支，删除远程分支了</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 分支删除，拷贝，重命名，参数若是大写就等同多了--force，强制执行</span>
+<span class="token comment" spellcheck="true"># -c, --copy : 复制分支，</span>
+<span class="token comment" spellcheck="true"># -C：等同于 --copy --force</span>
+<span class="token comment" spellcheck="true"># -d, --delete: 删除分支</span>
+<span class="token comment" spellcheck="true"># -m, --move：移动或者重命名分支</span>
+<span class="token function">git</span> branch -d branchName
+<span class="token function">git</span> branch -M oldBranch newNameBranch
+
+
+<span class="token comment" spellcheck="true"># 手动指定它的当前分支的上游分支,两个写法一致的</span>
+<span class="token comment" spellcheck="true"># 有关联一般也有取消关联，--unset-upstream</span>
+<span class="token function">git</span> branch --set-upstream-to<span class="token operator">=</span>origin/xxx 
+<span class="token function">git</span> branch --set-upstream-to origin xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p>暂存用的最多时侯就是你撸代码撸到一半，突然说有个紧急 BUG 要修正。</p>
+<p>或者别人在你这里需要帮忙排查代码，你这时候也会用到。</p>
+<p>强烈建议给每个 stash 添加描述信息！！！</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 缓存当前工作区的内容到stashName, save 这个现在不怎么推荐用，图方便也能用</span>
+<span class="token comment" spellcheck="true"># -a|--all: 除了未跟踪的文件，其他变动的文件都会保存</span>
+<span class="token comment" spellcheck="true"># -u|--include-untracked：包括没有添加到暂存区的文件</span>
+<span class="token function">git</span> stash save stashName
+<span class="token function">git</span> stash -u save stashName
+
+<span class="token comment" spellcheck="true"># 现在基本推荐用 push,因为有 pop，语义上和维护上更清晰</span>
+<span class="token comment" spellcheck="true"># 上面有的参数，它也有，还有-m 来备注这个 stash 的大概情况</span>
+<span class="token function">git</span> stash push -m <span class="token string">"更改了 xx"</span> 
+
+<span class="token comment" spellcheck="true"># 有保存那肯定也有取用的</span>
+<span class="token comment" spellcheck="true"># pop: 取会删除对应的保存记录</span>
+<span class="token comment" spellcheck="true"># apply: 取但保留记录</span>
+<span class="token comment" spellcheck="true"># 0就是--index,这个东西哪里来的呢？</span>
+<span class="token function">git</span> stash apply stash@<span class="token punctuation">{</span>0<span class="token punctuation">}</span>
+<span class="token function">git</span> stash pop stash@<span class="token punctuation">{</span>0<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 查看stash 保存记录</span>
+<span class="token comment" spellcheck="true"># eg: stash@{0}: On dev: 测试</span>
+<span class="token function">git</span> stash list
+
+
+<span class="token comment" spellcheck="true"># 只想删除暂存记录怎么办：</span>
+<span class="token comment" spellcheck="true"># clear : 清空所有 stash</span>
+<span class="token comment" spellcheck="true"># drop: 清除指定的 stash</span>
+<span class="token function">git</span> stash <span class="token function">clear</span> <span class="token comment" spellcheck="true"># 慎用！</span>
+<span class="token function">git</span> stash drop stash@<span class="token punctuation">{</span>0<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 想看 stash 做了什么改动，类似简化版的git diff</span>
+<span class="token function">git</span> stash show stash@<span class="token punctuation">{</span>0<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-reflog"><a href="#git-reflog" class="headerlink" title="git reflog"></a>git reflog</h3><p>这个命令的强大之处，是记录了所有行为，包括你 rebase,merge, reset 这些</p>
+<p>当我们不小心硬回滚的时侯,或变基错了都可以在这里找到行为之前的commit，然后回滚。</p>
+<p>当然这个时间回溯也只在本地有用，你推送到远程分支的破坏性改动,该凉还是得凉。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 最近五次行为,不带-n 则默认所有</span>
+<span class="token function">git</span> reflog -5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h3><p>这个东西你可以理解为你去买橘子，你会专门挑一些符合心意的橘子放到购物篮中。你可以从多个分支同时挑取部分需要的 commit 合并到同一个地方去，是不是贼骚。这货和变基有点类似，但是仅仅类似，挑过来的 commit 若是没有冲突则追加。有冲突会中断，解决后 –continue</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在当前分支挑其他分支的 commit，把那部分的变动那过来</span>
+<span class="token function">git</span> cherry-pick commit-sha1
+
+<span class="token comment" spellcheck="true"># 支持一次性拿多个</span>
+<span class="token function">git</span> cherry-pick master~4 master~2
+
+<span class="token comment" spellcheck="true"># 支持区间, 区间中间是 .. </span>
+<span class="token function">git</span> cherry-pick startGitSha1<span class="token punctuation">..</span>endGitSha1
+
+<span class="token comment" spellcheck="true"># --continue：继续 pick,一般有冲突解决后才需要这样</span>
+<span class="token comment" spellcheck="true"># --skip：跳过这次进入队列下一次行为 </span>
+<span class="token comment" spellcheck="true"># --abort : 完全放弃 pick，恢复 pick 之前的状态</span>
+<span class="token comment" spellcheck="true"># --quit: 未冲突的自动变更，冲突的不要，退出这次 pick</span>
+<span class="token comment" spellcheck="true"># 这几个状态跟变基差不多,解决冲突继续，跳过处理，放弃这次pick,不输出错误</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-rm"><a href="#git-rm" class="headerlink" title="git rm"></a>git rm</h3><p>这个命令在旧的版本用的比较最多的姿势是为了重新索引.gitignore 的范围</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 删除某个文件的索引</span>
+<span class="token comment" spellcheck="true"># --cache 不会删除硬盘中的文件，只是 git 索引(缓存)的关系！！！</span>
+<span class="token function">git</span> <span class="token function">rm</span> --cache -- <span class="token function">file</span>
+
+<span class="token comment" spellcheck="true"># 递归清除全部所有索引(也可以理解为缓存吧),这个姿势适合重新让.gitignore 新范围生效</span>
+<span class="token function">git</span> <span class="token function">rm</span> -r --cached <span class="token keyword">.</span>  
+<span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token function">git</span> commit -m <span class="token string">"xxx"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-rev-parse"><a href="#git-rev-parse" class="headerlink" title="git rev-parse"></a>git rev-parse</h3><p>这个估计一般人用的不是很多，可以通过这个快速获取部分git 仓库的信息</p>
+<p>我在弄脚本的时侯就会从这里拿东西</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 获取最新有效的commit</span>
+<span class="token comment" spellcheck="true"># --short：显示七位的 sha1,不带就是全部</span>
+<span class="token comment" spellcheck="true"># --verify: 校验是否有效commit</span>
+<span class="token comment" spellcheck="true"># HEAD: 当前分支的head 指向</span>
+<span class="token function">git</span> rev-parse --short HEAD --verify
+
+<span class="token comment" spellcheck="true"># 显示仓库的绝对路径</span>
+<span class="token function">git</span> rev-parse --show-toplevel <span class="token comment" spellcheck="true">#eg: /Users/linqunhe/Code/aozhe/thinking-ui</span>
+
+<span class="token comment" spellcheck="true"># 显示版本库.git 目录所在的位置</span>
+<span class="token function">git</span> rev-parse --git-dir
+
+<span class="token comment" spellcheck="true"># 显示所有关联引用的 git sha1</span>
+<span class="token function">git</span> rev-parse --all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><p>对于这个命令，在终端比对用的不是很频繁，除了少量改动的时侯可能会用这个看看。</p>
+<p>其他情况下我更倾向于用 GUI 工具来看，因为比对更加直观。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>git 的常用命令其实很好掌握，很多命令都有 Linux 的影子。</p>
+<p>列出来的命令都是高频使用的，或许有一些更骚的姿势没有摸索到</p>
+<p>一直在学习从未放弃  GT ^_^ 加油~</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Polaristing.github.io" rel="external nofollow noreferrer">Polaristing</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Polaristing.github.io/2019/12/28/hou-duan/git/gao-pin-shi-yong-de-git-ming-ling-ji-he/">https://Polaristing.github.io/2019/12/28/hou-duan/git/gao-pin-shi-yong-de-git-ming-ling-ji-he/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://Polaristing.github.io" target="_blank">Polaristing</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/springboot/">
+                                    <span class="chip bg-color">springboot</span>
+                                </a>
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '2374e0e46b1693032667',
+        clientSecret: '7a85bc72db4f0e7560b2e8cda6b39a33aa3a5a6a',
+        repo: 'polaristing.github.io',
+        owner: 'Polaristing',
+        admin: ["Polaristing"],
+        id: '2019-12-28T23-45-56',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/01/01/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Hexo博客主题之hexo-theme-matery的介绍">
+                        
+                        <span class="card-title">Hexo博客主题之hexo-theme-matery的介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            English Document | 演示示例 | QQ:1172895463
+
+这是一个采用Material Design和响应式设计的 Hexo 博客主题。
+
+特性
+简单漂亮，文章内容美观易读
+Material Design 设计
+响应
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/hexo-theme-matery/">
+                        <span class="chip bg-color">hexo-theme-matery</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/19/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-qiao-jie-mo-shi/">
+                    <div class="card-image">
+                        
+                        <img src="http://static.blinkfox.com/20181219-bridge.jpg" class="responsive-img" alt="Java面向对象设计之桥接模式">
+                        
+                        <span class="card-title">Java面向对象设计之桥接模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            模式动机设想如果要绘制矩形、圆形、椭圆、正方形，我们至少需要4个形状类，但是如果绘制的图形需要具有不同的颜色，如红色、绿色、蓝色等，此时至少有如下两种设计方案：
+
+第一种设计方案是为每一种形状都提供一套各种颜色的版本。
+第二种设计方案是根据
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    软件设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 思洁入夢<br />'
+            + '文章作者: Ting Guo<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+    
+<!-- 代码块复制 -->
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number(''),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://Polaristing.github.io" target="_blank">Ting Guo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/Polaristing/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">257.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Polaristing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:gting0518@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1172895463" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1172895463" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript"> var OriginTitile = document.title, st;
+        document.addEventListener("visibilitychange", function () { document.hidden ?
+            (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title =
+                "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+            </body>
+
+</html>

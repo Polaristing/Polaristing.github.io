@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://polaristing.github.io/"/>
-  <updated>2020-01-02T16:23:53.050Z</updated>
+  <updated>2020-01-13T14:41:09.633Z</updated>
   <id>https://polaristing.github.io/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java需要了解的开发命名规范</title>
+    <link href="https://polaristing.github.io/2020/01/05/hou-duan/java/java-xu-yao-liao-jie-de-kai-fa-ming-ming-gui-fan/"/>
+    <id>https://polaristing.github.io/2020/01/05/hou-duan/java/java-xu-yao-liao-jie-de-kai-fa-ming-ming-gui-fan/</id>
+    <published>2020-01-05T05:19:02.000Z</published>
+    <updated>2020-01-13T14:41:09.633Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Java需要了解的开发命名规范&quot;&gt;&lt;a href=&quot;#Java需要了解的开发命名规范&quot; class=&quot;headerlink&quot; title=&quot;Java需要了解的开发命名规范&quot;&gt;&lt;/a&gt;Java需要了解的开发命名规范&lt;/h1&gt;&lt;h2 id=&quot;编码5分钟，命名2小时？Java开发都需要参考的一份命名规范！&quot;&gt;&lt;a href=&quot;#编码5分钟，命名2小时？Java开发都需要参考的一份命名规范！&quot; class=&quot;headerlink&quot; title=&quot;编码5分钟，命名2小时？Java开发都需要参考的一份命名规范！&quot;&gt;&lt;/a&gt;编码5分钟，命名2小时？Java开发都需要参考的一份命名规范！&lt;/h2&gt;&lt;p&gt;记录学习，工作中的点点滴滴&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="综合" scheme="https://Polaristing.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux开发当中curl简单使用</title>
+    <link href="https://polaristing.github.io/2020/01/01/ruan-jian-gong-ju/linux/linux-kai-fa-dang-zhong-curl-jian-dan-shi-yong/"/>
+    <id>https://polaristing.github.io/2020/01/01/ruan-jian-gong-ju/linux/linux-kai-fa-dang-zhong-curl-jian-dan-shi-yong/</id>
+    <published>2020-01-01T10:50:18.000Z</published>
+    <updated>2020-01-13T14:26:42.024Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;curl是linux上可以发送http请求的命令。当然Postman是一个很好的接口调用管理工具，但在验证一个linux服务器调用另外一个linux服务器API是否可用的场景下，非curl命令莫属&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://Polaristing.github.io/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://Polaristing.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux命令</title>
+    <link href="https://polaristing.github.io/2020/01/01/ruan-jian-gong-ju/linux/linux-ming-ling/"/>
+    <id>https://polaristing.github.io/2020/01/01/ruan-jian-gong-ju/linux/linux-ming-ling/</id>
+    <published>2020-01-01T08:07:55.000Z</published>
+    <updated>2020-01-13T13:57:21.695Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;学习linux命令，看这篇2w多字的命令详解就够了&quot;&gt;&lt;a href=&quot;#学习linux命令，看这篇2w多字的命令详解就够了&quot; class=&quot;headerlink&quot; title=&quot;学习linux命令，看这篇2w多字的命令详解就够了&quot;&gt;&lt;/a&gt;学习linux命令，看这篇2w多字的命令详解就够了&lt;/h1&gt;&lt;h2 id=&quot;学习linux命令，看这篇2w多字的命令详解就够了-1&quot;&gt;&lt;a href=&quot;#学习linux命令，看这篇2w多字的命令详解就够了-1&quot; class=&quot;headerlink&quot; title=&quot;学习linux命令，看这篇2w多字的命令详解就够了&quot;&gt;&lt;/a&gt;学习linux命令，看这篇2w多字的命令详解就够了&lt;/h2&gt;&lt;h3 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;&lt;strong&gt;序言&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;本篇文章主要讲解了一些linux常用命令，主要讲解模式是，命令介绍、命令参数格式、命令参数、命令常用参数示例。由于linux命令较多，我还特意选了一些日常使用较为频繁的命令进行讲解，但还是免不了文章很长，建议大家收藏起来，用到的时候不会了再来阅读。当然学习linux命令最好的方法是学会使用linux自带的man手册，所有linux命令规范和使用细则都会在该手册中讲解的很清楚，我在书写的过程中也是参考该手册和日常使用情况。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;如果还有哪些是大家希望再补充的命令，可以留言给我，我会持续更新该文章，同时也作为我学习和工作的手册。&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="综合" scheme="https://Polaristing.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+    
+    
+      <category term="linux" scheme="https://Polaristing.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客主题之hexo-theme-matery的介绍</title>
@@ -42,6 +106,29 @@
       <category term="Hexo" scheme="https://Polaristing.github.io/tags/Hexo/"/>
     
       <category term="hexo-theme-matery" scheme="https://Polaristing.github.io/tags/hexo-theme-matery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高频使用的 Git 命令集合</title>
+    <link href="https://polaristing.github.io/2019/12/28/hou-duan/git/gao-pin-shi-yong-de-git-ming-ling-ji-he/"/>
+    <id>https://polaristing.github.io/2019/12/28/hou-duan/git/gao-pin-shi-yong-de-git-ming-ling-ji-he/</id>
+    <published>2019-12-28T15:45:56.000Z</published>
+    <updated>2020-01-13T14:33:06.866Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;汇总下我在项目中高频使用的git命令及姿势&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://Polaristing.github.io/categories/git/"/>
+    
+    
+      <category term="springboot" scheme="https://Polaristing.github.io/tags/springboot/"/>
+    
+      <category term="git" scheme="https://Polaristing.github.io/tags/git/"/>
     
   </entry>
   
@@ -75,6 +162,48 @@
   </entry>
   
   <entry>
+    <title>IntelliJ IDEA 最常用配置详细图解</title>
+    <link href="https://polaristing.github.io/2019/12/15/ruan-jian-gong-ju/idea/intellij-idea-zui-chang-yong-pei-zhi-xiang-xi-tu-jie/"/>
+    <id>https://polaristing.github.io/2019/12/15/ruan-jian-gong-ju/idea/intellij-idea-zui-chang-yong-pei-zhi-xiang-xi-tu-jie/</id>
+    <published>2019-12-15T14:24:45.000Z</published>
+    <updated>2020-01-13T14:24:02.382Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚刚使用IntelliJ IDEA 编辑器的时候，会有很多设置，会方便以后的开发，磨刀不误砍柴工&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="IDEA" scheme="https://Polaristing.github.io/categories/IDEA/"/>
+    
+    
+      <category term="idea" scheme="https://Polaristing.github.io/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA自动补全功能你还不知道吧</title>
+    <link href="https://polaristing.github.io/2019/12/15/ruan-jian-gong-ju/idea/idea-zi-dong-bu-quan-gong-neng-ni-huan-bu-zhi-dao-ba/"/>
+    <id>https://polaristing.github.io/2019/12/15/ruan-jian-gong-ju/idea/idea-zi-dong-bu-quan-gong-neng-ni-huan-bu-zhi-dao-ba/</id>
+    <published>2019-12-15T14:06:43.000Z</published>
+    <updated>2020-01-13T14:24:02.531Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;IDEA 有个很牛逼的功能，那就是后缀补全（不是自动补全），很多人竟然不知道这个操作，还在手动敲代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="IDEA" scheme="https://Polaristing.github.io/categories/IDEA/"/>
+    
+    
+      <category term="idea" scheme="https://Polaristing.github.io/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java面向对象设计之适配器模式</title>
     <link href="https://polaristing.github.io/2019/12/12/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-gua-pei-qi-mo-shi/"/>
     <id>https://polaristing.github.io/2019/12/12/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-gua-pei-qi-mo-shi/</id>
@@ -104,11 +233,34 @@
   </entry>
   
   <entry>
+    <title>springboot添加logback日志</title>
+    <link href="https://polaristing.github.io/2019/12/06/hou-duan/springboot/springboot-tian-jia-logback-ri-zhi/"/>
+    <id>https://polaristing.github.io/2019/12/06/hou-duan/springboot/springboot-tian-jia-logback-ri-zhi/</id>
+    <published>2019-12-06T09:10:17.000Z</published>
+    <updated>2020-01-13T14:21:03.594Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在resource下面新建logback目录&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="https://Polaristing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="springboot" scheme="https://Polaristing.github.io/tags/springboot/"/>
+    
+      <category term="logback" scheme="https://Polaristing.github.io/tags/logback/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot2.x 单元测试</title>
     <link href="https://polaristing.github.io/2019/12/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/"/>
     <id>https://polaristing.github.io/2019/12/02/hou-duan/spring/springboot2.x-dan-yuan-ce-shi/</id>
     <published>2019-12-02T09:20:00.000Z</published>
-    <updated>2020-01-02T16:21:17.264Z</updated>
+    <updated>2020-01-13T14:41:09.931Z</updated>
     
     <summary type="html">
     
@@ -175,7 +327,7 @@
     <link href="https://polaristing.github.io/2019/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/"/>
     <id>https://polaristing.github.io/2019/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/</id>
     <published>2019-11-22T15:30:00.000Z</published>
-    <updated>2020-01-02T16:02:56.467Z</updated>
+    <updated>2020-01-13T14:45:04.595Z</updated>
     
     <summary type="html">
     
@@ -202,11 +354,32 @@
   </entry>
   
   <entry>
+    <title>关于SQL优化的小知识</title>
+    <link href="https://polaristing.github.io/2019/11/21/shu-ju-ku/guan-yu-sql-you-hua-de-xiao-zhi-shi/"/>
+    <id>https://polaristing.github.io/2019/11/21/shu-ju-ku/guan-yu-sql-you-hua-de-xiao-zhi-shi/</id>
+    <published>2019-11-21T03:25:54.000Z</published>
+    <updated>2020-01-13T14:41:09.568Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;负向查询不命中索引&quot;&gt;&lt;a href=&quot;#负向查询不命中索引&quot; class=&quot;headerlink&quot; title=&quot;负向查询不命中索引&quot;&gt;&lt;/a&gt;负向查询不命中索引&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="sql优化" scheme="https://Polaristing.github.io/categories/sql%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="sql优化" scheme="https://Polaristing.github.io/tags/sql%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue 文档风格的 Typora 主题</title>
     <link href="https://polaristing.github.io/2019/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/"/>
     <id>https://polaristing.github.io/2019/11/19/ruan-jian-gong-ju/markdown/vue-wen-dang-feng-ge-de-typora-zhu-ti/</id>
     <published>2019-11-18T16:30:00.000Z</published>
-    <updated>2020-01-02T16:24:39.315Z</updated>
+    <updated>2020-01-13T14:45:04.910Z</updated>
     
     <summary type="html">
     
@@ -238,7 +411,7 @@
     <link href="https://polaristing.github.io/2019/11/18/ruan-jian-gong-ju/cpu-duo-ji-huan-cun/"/>
     <id>https://polaristing.github.io/2019/11/18/ruan-jian-gong-ju/cpu-duo-ji-huan-cun/</id>
     <published>2019-11-18T13:55:00.000Z</published>
-    <updated>2020-01-02T16:03:17.307Z</updated>
+    <updated>2020-01-13T14:45:05.056Z</updated>
     
     <summary type="html">
     
@@ -257,6 +430,29 @@
     
     
       <category term="CPU缓存" scheme="https://Polaristing.github.io/tags/CPU%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装java多环境管理(jdk多版本sdkman)</title>
+    <link href="https://polaristing.github.io/2019/11/18/hou-duan/java/an-zhuang-java-duo-huan-jing-guan-li-jdk-duo-ban-ben/"/>
+    <id>https://polaristing.github.io/2019/11/18/hou-duan/java/an-zhuang-java-duo-huan-jing-guan-li-jdk-duo-ban-ben/</id>
+    <published>2019-11-18T02:41:48.000Z</published>
+    <updated>2020-01-13T14:41:09.901Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;windows安装jdk多版本&quot;&gt;&lt;a href=&quot;#windows安装jdk多版本&quot; class=&quot;headerlink&quot; title=&quot;windows安装jdk多版本&quot;&gt;&lt;/a&gt;windows安装jdk多版本&lt;/h3&gt;&lt;h4 id=&quot;安装Chocolatey&quot;&gt;&lt;a href=&quot;#安装Chocolatey&quot; class=&quot;headerlink&quot; title=&quot;安装Chocolatey&quot;&gt;&lt;/a&gt;安装Chocolatey&lt;/h4&gt;&lt;h5 id=&quot;点击win10桌面的开始菜单，输入cmd，右键选中命令提示符，选择以管理员身份运行&quot;&gt;&lt;a href=&quot;#点击win10桌面的开始菜单，输入cmd，右键选中命令提示符，选择以管理员身份运行&quot; class=&quot;headerlink&quot; title=&quot;点击win10桌面的开始菜单，输入cmd，右键选中命令提示符，选择以管理员身份运行&quot;&gt;&lt;/a&gt;点击win10桌面的开始菜单，输入cmd，右键选中命令提示符，选择以管理员身份运行&lt;/h5&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://Polaristing.github.io/categories/Java/"/>
+    
+    
+      <category term="sdkman" scheme="https://Polaristing.github.io/tags/sdkman/"/>
+    
+      <category term="java" scheme="https://Polaristing.github.io/tags/java/"/>
     
   </entry>
   
@@ -340,254 +536,6 @@
     
     
       <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java7新特性及使用</title>
-    <link href="https://polaristing.github.io/2019/11/12/hou-duan/java/java7-xin-te-xing-ji-shi-yong/"/>
-    <id>https://polaristing.github.io/2019/11/12/hou-duan/java/java7-xin-te-xing-ji-shi-yong/</id>
-    <published>2019-11-11T16:30:00.000Z</published>
-    <updated>2020-01-02T15:59:30.549Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;新特性列表&quot;&gt;&lt;a href=&quot;#新特性列表&quot; class=&quot;headerlink&quot; title=&quot;新特性列表&quot;&gt;&lt;/a&gt;新特性列表&lt;/h2&gt;&lt;p&gt;以下是Java7中的引入的部分新特性。关于Java7更详细的介绍可参考&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://Polaristing.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java6新特性及使用</title>
-    <link href="https://polaristing.github.io/2019/11/11/hou-duan/java/java6-xin-te-xing-ji-shi-yong/"/>
-    <id>https://polaristing.github.io/2019/11/11/hou-duan/java/java6-xin-te-xing-ji-shi-yong/</id>
-    <published>2019-11-11T14:40:00.000Z</published>
-    <updated>2020-01-02T15:59:30.558Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;新特性列表&quot;&gt;&lt;a href=&quot;#新特性列表&quot; class=&quot;headerlink&quot; title=&quot;新特性列表&quot;&gt;&lt;/a&gt;新特性列表&lt;/h2&gt;&lt;p&gt;以下是Java6中的引入的部分新特性，相比Java5的新特性就少了很多了。关于Java6更详细的介绍可参考&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://Polaristing.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java5新特性及使用</title>
-    <link href="https://polaristing.github.io/2019/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/"/>
-    <id>https://polaristing.github.io/2019/11/09/hou-duan/java/java5-xin-te-xing-ji-shi-yong/</id>
-    <published>2019-11-08T16:30:00.000Z</published>
-    <updated>2020-01-02T15:59:30.487Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;新特性列表&quot;&gt;&lt;a href=&quot;#新特性列表&quot; class=&quot;headerlink&quot; title=&quot;新特性列表&quot;&gt;&lt;/a&gt;新特性列表&lt;/h2&gt;&lt;p&gt;以下是Java5中的引入的部分新特性，关于更详细的新特性了解，可参考&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://Polaristing.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java注解的理解和应用</title>
-    <link href="https://polaristing.github.io/2019/11/08/hou-duan/java/java-zhu-jie-de-li-jie-he-ying-yong/"/>
-    <id>https://polaristing.github.io/2019/11/08/hou-duan/java/java-zhu-jie-de-li-jie-he-ying-yong/</id>
-    <published>2019-11-07T16:30:00.000Z</published>
-    <updated>2020-01-02T15:59:30.248Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;1-什么是注解&quot;&gt;&lt;a href=&quot;#1-什么是注解&quot; class=&quot;headerlink&quot; title=&quot;1.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://Polaristing.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java反射基础</title>
-    <link href="https://polaristing.github.io/2019/11/07/hou-duan/java/java-fan-she-ji-chu/"/>
-    <id>https://polaristing.github.io/2019/11/07/hou-duan/java/java-fan-she-ji-chu/</id>
-    <published>2019-11-07T13:40:00.000Z</published>
-    <updated>2020-01-02T15:59:30.580Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://Polaristing.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java IO 知识整理</title>
-    <link href="https://polaristing.github.io/2019/11/05/hou-duan/java/java-io-zhi-shi-zheng-li/"/>
-    <id>https://polaristing.github.io/2019/11/05/hou-duan/java/java-io-zhi-shi-zheng-li/</id>
-    <published>2019-11-05T03:30:00.000Z</published>
-    <updated>2020-01-02T15:59:30.594Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;各IO类关系梳理&quot;&gt;&lt;a href=&quot;#各IO类关系梳理&quot; class=&quot;headerlink&quot; title=&quot;各IO类关系梳理&quot;&gt;&lt;/a&gt;各IO类关系梳理&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;InputStream: Java
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://Polaristing.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java面向对象设计之责任链模式</title>
-    <link href="https://polaristing.github.io/2019/11/04/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ze-ren-lian-mo-shi/"/>
-    <id>https://polaristing.github.io/2019/11/04/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ze-ren-lian-mo-shi/</id>
-    <published>2019-11-04T14:00:00.000Z</published>
-    <updated>2020-01-02T16:05:16.225Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="软件设计" scheme="https://Polaristing.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-      <category term="设计模式" scheme="https://Polaristing.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript之再学习</title>
-    <link href="https://polaristing.github.io/2019/10/30/qian-duan/javascript-zhi-zai-xue-xi/"/>
-    <id>https://polaristing.github.io/2019/10/30/qian-duan/javascript-zhi-zai-xue-xi/</id>
-    <published>2019-10-29T16:30:00.000Z</published>
-    <updated>2020-01-02T16:06:33.470Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;&lt;p&gt;JavaScript 是一种面向对象的动态语言，它包含类型、运算符、标准内置（ built-in）对象和方法。它的语法来源于 Java 和
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://Polaristing.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://Polaristing.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java面向对象设计之单例模式</title>
-    <link href="https://polaristing.github.io/2019/10/29/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dan-li-mo-shi/"/>
-    <id>https://polaristing.github.io/2019/10/29/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dan-li-mo-shi/</id>
-    <published>2019-10-29T15:30:00.000Z</published>
-    <updated>2020-01-02T16:05:16.287Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="软件设计" scheme="https://Polaristing.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="Java" scheme="https://Polaristing.github.io/tags/Java/"/>
-    
-      <category term="设计模式" scheme="https://Polaristing.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

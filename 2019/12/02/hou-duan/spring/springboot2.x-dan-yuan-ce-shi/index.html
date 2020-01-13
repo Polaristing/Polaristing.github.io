@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
     <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
@@ -286,7 +287,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://static.blinkfox.com/20190302.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -1537,32 +1538,39 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/12/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-gua-pei-qi-mo-shi/">
+                <a href="/2019/12/06/hou-duan/springboot/springboot-tian-jia-logback-ri-zhi/">
                     <div class="card-image">
                         
-                        <img src="http://static.blinkfox.com/20181211-adapter.jpg" class="responsive-img" alt="Java面向对象设计之适配器模式">
                         
-                        <span class="card-title">Java面向对象设计之适配器模式</span>
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="springboot添加logback日志">
+                        
+                        <span class="card-title">springboot添加logback日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            模式动机
-在软件开发中采用类似于电源适配器的设计和编码技巧被称为适配器模式。
-通常情况下，客户端可以通过目标类的接口访问它所提供的服务。有时，现有的类可以满足客户类的功能需要，但是它所提供的接口不一定是客户类所期望的，这可能是因为现有类中方
+                            在resource下面新建logback目录
+
+
+在logback目录新建logback.properties
+# 日志存储目录
+log.path=./logs
+# 控制台日志级别最好设置info
+console.level=debug
+在
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    软件设计
+                            <a href="/categories/SpringBoot/" class="post-category">
+                                    SpringBoot
                                 </a>
                             
                             
@@ -1572,12 +1580,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
                     </a>
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/logback/">
+                        <span class="chip bg-color">logback</span>
                     </a>
                     
                 </div>
@@ -1770,7 +1778,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">188.8k</span>&nbsp;字
+                class="white-color">257.1k</span>&nbsp;字
             
             
             

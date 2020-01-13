@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
     <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="思洁入夢" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
@@ -382,6 +383,37 @@ $(function () {
                     
 
                     
+                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer" class="dplayer-video"
+                    ></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'true' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: 'http://www.xiayuan52.cn/wp-content/uploads/2019/11/Alan_Walker_-_The_Spectre.mp4?_=1',
+                pic: '',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
+                    
 
                     
                     <div id="recommend-sections" class="recommend">
@@ -424,7 +456,7 @@ $(function () {
     
     
     <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('http://static.blinkfox.com/20181105-io.jpg')">
+        <div class="post-card" style="background-image: url('/medias/featureimages/43.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
@@ -479,7 +511,7 @@ Collection接口继承了Iter
     
     
     <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('http://static.blinkfox.com/20190302.png')">
+        <div class="post-card" style="background-image: url('/medias/featureimages/13.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
@@ -528,74 +560,27 @@ Collection接口继承了Iter
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/09/14/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-ce-lue-mo-shi/">
+                    <a href="/2019/10/08/qian-duan/qing-liang-ji-gun-dong-dong-hua-javascript-ku-aos.js/">
                         <div class="card-image">
                             
-                            <img src="http://static.blinkfox.com/hexoblog_20140914_strategy.jpg" class="responsive-img" alt="Java面向对象设计之策略模式">
+                            <img src="http://static.blinkfox.com/20181008_1.jpg" class="responsive-img" alt="轻量级滚动动画JavaScript库aos.js">
                             
-                            <span class="card-title">Java面向对象设计之策略模式</span>
+                            <span class="card-title">轻量级滚动动画JavaScript库aos.js</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一、模式动机完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地
+                                一、简介aos.js是一款效果超赞的页面滚动的 JavaScript 动画库插件。该动画库可以在页面滚动时提供28种不同的元素动画效果，以及多种easing效果。在页面往回滚动时，元素会恢复到原来的状态。
+
+
+注：从2.0.0版本之后,只支
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    软件设计
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                            <span class="chip bg-color">设计模式</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/14/qian-duan/javascript-ji-chu-jiao-cheng/">
-                        <div class="card-image">
-                            
-                            <img src="http://static.blinkfox.com/hexoblog_20180914_js.jpg" class="responsive-img" alt="JavaScript基础教程">
-                            
-                            <span class="card-title">JavaScript基础教程</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                一、JavaScript介绍JavaScript是目前所有主流浏览器上唯一支持的脚本语言，这也是早期JavaScript的唯一用途。其主要作用是在不与服务器交互的情况下修改HTML页面内容，因此其最关键的部分是DOM（文档对象模型），也就是
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-08
                             </span>
                             <span class="publish-author">
                                 
@@ -624,25 +609,137 @@ Collection接口继承了Iter
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/09/13/hou-duan/java/commons/commons-collections-bao-he-jian-jie/">
+                    <a href="/2019/10/06/qian-duan/quan-gong-neng-javascript-deng-xiang-hua-lang-cha-jian-lightgallery.js/">
                         <div class="card-image">
                             
+                            <img src="http://static.blinkfox.com/20181006_gallery.jpg" class="responsive-img" alt="全功能JavaScript灯箱画廊插件lightgallery.js">
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Apache Commons Collections包和简介">
-                            
-                            <span class="card-title">Apache Commons Collections包和简介</span>
+                            <span class="card-title">全功能JavaScript灯箱画廊插件lightgallery.js</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                背景介绍Apache Commons是Apache软件基金会的项目，曾经隶属于Jakarta项目。Commons的目的是提供可重用的、解决各种实际的通用问题且开源的Java代码。Commons由三部分组成：Proper（是一些已发布的项目）
+                                一、简介
+lightgallery.js 是一个全功能、轻量级、无依赖的灯箱画廊显示库。
+
+
+二、主要特性
+全响应式兼容
+模块化的架构和内置插件
+移动设备和触摸支持
+桌面设备拖拽支持
+双击查看图像的实际大小
+动画缩略图
+社交媒体分享
+You
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">JavaScript</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/10/05/bian-cheng-zhi-dao/google-java-bian-cheng-feng-ge-zhi-nan/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/36.jpg" class="responsive-img" alt="Google Java编程风格指南">
+                            
+                            <span class="card-title">Google Java编程风格指南</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1 前言这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则，我们才认为它符合Google的Java编程风格。
+与其它的编程风格指南一样，这里所讨论的不仅仅是编码格式美不美观的问题，同时也讨论
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/" class="post-category">
+                                    编程之道
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/Google/">
+                            <span class="chip bg-color">Google</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/29/hou-duan/java/commons/apache-commons-lang-zhi-ri-qi-shi-jian-gong-ju-lei/">
+                        <div class="card-image">
+                            
+                            <img src="http://static.blinkfox.com/20180929_datetime.jpg" class="responsive-img" alt="Apache Commons Lang之日期时间工具类">
+                            
+                            <span class="card-title">Apache Commons Lang之日期时间工具类</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+码农不识Apache，码尽一生也枉然。
+
+FastDateFormatFastDateFormat是一个快速且线程安全的时间操作类，它完全可以替代SimpleDateFromat。因为是线程安全的，所以你可以把它作为一个类的静态字段使用。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-29
                             </span>
                             <span class="publish-author">
                                 
@@ -675,25 +772,28 @@ Collection接口继承了Iter
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/09/13/hou-duan/java/java-8-zhong-guan-yu-ri-qi-he-shi-jian-api-de-20-ge-shi-yong-shi-li/">
+                    <a href="/2019/09/28/hou-duan/java/commons/apache-commons-lang-zhi-arrayutils/">
                         <div class="card-image">
                             
+                            <img src="http://static.blinkfox.com/image_20180928.jpg" class="responsive-img" alt="Apache Commons Lang之ArrayUtils">
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Java8中关于日期和时间API的20个使用示例">
-                            
-                            <span class="card-title">Java8中关于日期和时间API的20个使用示例</span>
+                            <span class="card-title">Apache Commons Lang之ArrayUtils</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一、前言随着lambda表达式、streams以及一系列小优化，Java8推出了全新的日期时间API，在一下的指南中我们将通过一些简单的示例来学习如何使用新API。Java处理日期、日历和时间的方式一直为社区所诟病，将java.util.D
+                                
+码农不识Apache，码尽一生也枉然。
+
+常量数组public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
+public static final Class&lt;
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-28
                             </span>
                             <span class="publish-author">
                                 
@@ -715,6 +815,10 @@ Collection接口继承了Iter
                             <span class="chip bg-color">Java</span>
                         </a>
                         
+                        <a href="/tags/Apache/">
+                            <span class="chip bg-color">Apache</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -722,12 +826,67 @@ Collection接口继承了Iter
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/08/20/hou-duan/jpa/fenix-bi-mybatis-geng-jia-qiang-da-de-spring-data-jpa-kuo-zhan-ku/">
+                    <a href="/2019/09/27/bian-cheng-zhi-dao/li-yong-lombok-bian-xie-you-ya-de-spring-yi-lai-zhu-ru-dai-ma-qu-diao-fan-ren-de-autowired/">
                         <div class="card-image">
                             
-                            <img src="http://static.blinkfox.com/blog/2019/08/20jpa-20190820.png" class="responsive-img" alt="Fenix — 比 MyBatis 更加强大的 Spring Data JPA 扩展库">
                             
-                            <span class="card-title">Fenix — 比 MyBatis 更加强大的 Spring Data JPA 扩展库</span>
+                            <img src="/medias/featureimages/45.jpg" class="responsive-img" alt="利用Lombok编写优雅的spring依赖注入代码,去掉繁人的@Autowired">
+                            
+                            <span class="card-title">利用Lombok编写优雅的spring依赖注入代码,去掉繁人的@Autowired</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                利用Lombok编写优雅的spring依赖注入代码,去掉繁人的@Autowired
+@Service
+public class OrderService {
+    @Autowired
+    private UserService us
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-27
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BB%BC%E5%90%88/" class="post-category">
+                                    综合
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/lombok/">
+                            <span class="chip bg-color">lombok</span>
+                        </a>
+                        
+                        <a href="/tags/lombok%E5%AE%9E%E7%8E%B0%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">
+                            <span class="chip bg-color">lombok实现依赖注入</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/27/hou-duan/java/commons/apache-commons-lang-zhi-stringutils/">
+                        <div class="card-image">
+                            
+                            <img src="http://static.blinkfox.com/hexoblog_20180927_string.jpg" class="responsive-img" alt="Apache Commons Lang之StringUtils">
+                            
+                            <span class="card-title">Apache Commons Lang之StringUtils</span>
                         </div>
                     </a>
 
@@ -735,12 +894,16 @@ Collection接口继承了Iter
                         <div class="summary block-with-text">
                             
                                 
-Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动态 SQL (JPQL) 而生的 Spring Data JPA 扩展库，目的是辅助开发者更方便、快捷的书写复杂、动态且易于维护的 SQL，支持 XML 和 Java
+码农不识Apache，码尽一生也枉然。
+
+判断空字符串isEmpty(CharSequence cs)判断是否是空字符串，代码示例：
+StringUtils.isEmpty(null)      = true
+StringUtils.is
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-08-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-27
                             </span>
                             <span class="publish-author">
                                 
@@ -762,12 +925,8 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
                             <span class="chip bg-color">Java</span>
                         </a>
                         
-                        <a href="/tags/JPA/">
-                            <span class="chip bg-color">JPA</span>
-                        </a>
-                        
-                        <a href="/tags/Fenix/">
-                            <span class="chip bg-color">Fenix</span>
+                        <a href="/tags/Apache/">
+                            <span class="chip bg-color">Apache</span>
                         </a>
                         
                     </div>
@@ -777,32 +936,40 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/07/12/hello-world/">
+                    <a href="/2019/09/25/shu-ju-ku/postgresql-ji-chu-zhi-shi-zheng-li/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                            <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="PostgreSQL基础知识整理">
                             
-                            <span class="card-title">Hello World</span>
+                            <span class="card-title">PostgreSQL基础知识整理</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                                数据库操作DMLCREATE TABLECREATE TABLE语句用于创建数据库中的表。语法是：
+CREATE TABLE 表名称 (
+列名1 数据类型,
+列名2 数据类型,
+列名3 数据类型,
+....
+);
+例：
+CREATE TAB
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-25
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                                 
                                 
@@ -813,8 +980,237 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Hexo/">
-                            <span class="chip bg-color">Hexo</span>
+                        <a href="/tags/PostgreSQL/">
+                            <span class="chip bg-color">PostgreSQL</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                            <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/24/ruan-jian-gong-ju/git/git-zhi-shi-dian-zheng-li/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/40.jpg" class="responsive-img" alt="Git知识点整理">
+                            
+                            <span class="card-title">Git知识点整理</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1. Git基本概念。
+repository
+config
+init
+clone
+fetch
+pull
+commit
+push
+branch
+head
+tag
+merge
+conflict
+diff
+log
+show
+status
+
+2. 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Git/">
+                            <span class="chip bg-color">Git</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/21/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-zhuang-tai-mo-shi/">
+                        <div class="card-image">
+                            
+                            <img src="http://static.blinkfox.com/hexoblog_20180921_state.jpg" class="responsive-img" alt="Java面向对象设计之状态模式">
+                            
+                            <span class="card-title">Java面向对象设计之状态模式</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                一、模式动机在很多情况下，一个对象的行为取决于一个或多个动态变化的属性，这样的属性叫做状态，这样的对象叫做有状态的(stateful)对象，这样的对象状态是从事先定义好的一系列值中取出的。当一个这样的对象与外部事件产生互动时，其内部状态就会
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    软件设计
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                            <span class="chip bg-color">设计模式</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/21/ruan-jian-gong-ju/mian-fei-pdf-zai-xian-zhuan-huan/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="免费pdf在线转换">
+                            
+                            <span class="card-title">免费pdf在线转换</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在线免费pdf world jpg转换
+
+
+
+https://www.ilovepdf.com/
+
+
+
+https://smallpdf.com/
+
+
+
+        document.querySelectorAll('.github-
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BB%BC%E5%90%88/" class="post-category">
+                                    综合
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/pdf%E5%9C%A8%E7%BA%BF%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">
+                            <span class="chip bg-color">pdf在线转换工具</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/20/ruan-jian-she-ji/she-ji-mo-shi/java-mian-xiang-dui-xiang-she-ji-zhi-dai-li-mo-shi/">
+                        <div class="card-image">
+                            
+                            <img src="http://static.blinkfox.com/hexoblog_20180920_proxy.jpg" class="responsive-img" alt="Java面向对象设计之代理模式">
+                            
+                            <span class="card-title">Java面向对象设计之代理模式</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                一、模式动机在某些情况下，一个客户不想或者不能直接引用一个对象，此时可以通过一个称之为“代理”的第三者来实现间接引用。代理对象可以在客户端和目标对象之间起到中介的作用，并且可以通过代理对象去掉客户不能看到 的内容和服务或者添加客户需要的额外
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-20
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    软件设计
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                            <span class="chip bg-color">设计模式</span>
                         </a>
                         
                     </div>
@@ -839,11 +1235,12 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">5 / 5</div>
+            <div class="center-align b-text-gray">5 / 9</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a class="right btn-floating btn-large disabled">
+            <a href="/page/6/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-right"></i>
             </a>
             
@@ -865,7 +1262,7 @@ Fenix（菲尼克斯）是一个比 MyBatis 更加强大，为解决复杂、动
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">188.8k</span>&nbsp;字
+                class="white-color">257.1k</span>&nbsp;字
             
             
             
